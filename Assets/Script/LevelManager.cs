@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
-
+using System.Collections.Generic;
 using System;
 
 
-public class LevelManager : MonoBehaviour {
+public class LevelManager : Singleton<LevelManager>{
 
     [SerializeField]
     private GameObject[] tilePrefabs;
 
+    [SerializeField]
+    private Transform map;
+
+    public Dictionary<Point, TileScript> Tiles { get; set; }
     public float TileSize
 
     {
@@ -18,6 +22,7 @@ public class LevelManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
     {
+       
         CreateLevel();
 
 	}
@@ -27,15 +32,22 @@ public class LevelManager : MonoBehaviour {
 	
 	}
 
+    private void TestDictionary()
+    {
+        Dictionary<string, int> testDictionary = new Dictionary<string, int>();
+    
+        
+    }
+
+
     private void CreateLevel()
     {
-
-        //string[] mapData = new string[]
-        //{
-        //    "0000", "1111", "2222", "3333", "4444", "5555"
-        //};
+        Tiles = new Dictionary<Point, TileScript>();
+        
+        //load form txt file
         string[] mapData = ReadFromTextFile();
 
+        //calculate map size
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
 
@@ -48,6 +60,7 @@ public class LevelManager : MonoBehaviour {
                 PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
             }
         }
+        
     }
 
 
@@ -55,9 +68,12 @@ public class LevelManager : MonoBehaviour {
     {
         int tileIndex = int.Parse(tileType);
 
-        GameObject newTile = Instantiate(tilePrefabs[tileIndex]);
+        TileScript newTile = Instantiate(tilePrefabs[tileIndex]).GetComponent<TileScript>();
 
-        newTile.transform.position = new Vector3(worldStartPoint.x + (TileSize * x), worldStartPoint.y - (TileSize * y), 0);
+
+        newTile.Setup(new Point(x, y), new Vector3(worldStartPoint.x + (TileSize * x), worldStartPoint.y - (TileSize * y), 0), map);
+
+        
     }
 
     private string[] ReadFromTextFile()
