@@ -94,6 +94,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 15034182}
   - 212: {fileID: 15034183}
+  - 114: {fileID: 15034184}
   m_Layer: 0
   m_Name: WayPoint11
   m_TagString: Untagged
@@ -143,6 +144,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &15034184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 15034181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &72115111
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,6 +178,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 72115112}
   - 212: {fileID: 72115113}
+  - 114: {fileID: 72115114}
   m_Layer: 0
   m_Name: WayPoint3
   m_TagString: Untagged
@@ -201,6 +228,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &72115114
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 72115111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &152593505
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,6 +262,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 152593506}
   - 212: {fileID: 152593507}
+  - 114: {fileID: 152593508}
   m_Layer: 0
   m_Name: WayPoint7
   m_TagString: Untagged
@@ -259,6 +312,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &152593508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 152593505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &185962857
 GameObject:
   m_ObjectHideFlags: 0
@@ -268,6 +346,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 185962858}
   - 212: {fileID: 185962859}
+  - 114: {fileID: 185962860}
   m_Layer: 0
   m_Name: WayPoint5
   m_TagString: Untagged
@@ -317,6 +396,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &185962860
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 185962857}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &188580066
 GameObject:
   m_ObjectHideFlags: 0
@@ -527,6 +631,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 390993276}
   - 212: {fileID: 390993277}
+  - 114: {fileID: 390993278}
   m_Layer: 0
   m_Name: WayPoint0
   m_TagString: Untagged
@@ -576,6 +681,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &390993278
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 390993275}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &585949238
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,6 +715,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 585949239}
   - 212: {fileID: 585949240}
+  - 114: {fileID: 585949241}
   m_Layer: 0
   m_Name: WayPoint8
   m_TagString: Untagged
@@ -634,6 +765,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &585949241
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 585949238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &586756433
 GameObject:
   m_ObjectHideFlags: 0
@@ -856,6 +1012,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 734869327}
   - 212: {fileID: 734869328}
+  - 114: {fileID: 734869329}
   m_Layer: 0
   m_Name: WayPoint9
   m_TagString: Untagged
@@ -905,6 +1062,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &734869329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 734869326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &806492298
 GameObject:
   m_ObjectHideFlags: 0
@@ -1343,6 +1525,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1214421475}
   - 212: {fileID: 1214421476}
+  - 114: {fileID: 1214421477}
   m_Layer: 0
   m_Name: WayPoint2
   m_TagString: Untagged
@@ -1392,6 +1575,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1214421477
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1214421474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &1225866531
 GameObject:
   m_ObjectHideFlags: 0
@@ -1401,6 +1609,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1225866532}
   - 212: {fileID: 1225866533}
+  - 114: {fileID: 1225866534}
   m_Layer: 0
   m_Name: WayPoint10
   m_TagString: Untagged
@@ -1450,6 +1659,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1225866534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1225866531}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &1226876996
 GameObject:
   m_ObjectHideFlags: 0
@@ -1459,6 +1693,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1226876997}
   - 212: {fileID: 1226876998}
+  - 114: {fileID: 1226876999}
   m_Layer: 0
   m_Name: WayPoint6
   m_TagString: Untagged
@@ -1508,6 +1743,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1226876999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1226876996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &1312632173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1517,6 +1777,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1312632174}
   - 212: {fileID: 1312632175}
+  - 114: {fileID: 1312632176}
   m_Layer: 0
   m_Name: WayPoint4
   m_TagString: Untagged
@@ -1566,6 +1827,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1312632176
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1312632173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1001 &1445444741
 Prefab:
   m_ObjectHideFlags: 0
@@ -1803,6 +2089,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerPrefab: {fileID: 154326, guid: 6e0f92a3930492b438e3f0747ea6449a, type: 2}
   sprite: {fileID: 21300000, guid: ff4eebe7371952645acb407edcb21dc1, type: 3}
+--- !u!1 &1794647967 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 197334, guid: 614f4dc81f2ad4dd0bb9a759c0274631, type: 2}
+  m_PrefabInternal: {fileID: 1445444741}
+--- !u!114 &1794647970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1794647967}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e13329c808ded4a479eaadaeda32f123, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  speed: 1
 --- !u!1 &1868285790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1812,6 +2115,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1868285791}
   - 212: {fileID: 1868285792}
+  - 114: {fileID: 1868285793}
   m_Layer: 0
   m_Name: WayPoint1
   m_TagString: Untagged
@@ -1861,6 +2165,31 @@ SpriteRenderer:
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
+--- !u!114 &1868285793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1868285790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85227618888f7874289f4edb1e257386, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 390993275}
+  - {fileID: 1868285790}
+  - {fileID: 1214421474}
+  - {fileID: 72115111}
+  - {fileID: 1312632173}
+  - {fileID: 185962857}
+  - {fileID: 1226876996}
+  - {fileID: 152593505}
+  - {fileID: 585949238}
+  - {fileID: 734869326}
+  - {fileID: 1225866531}
+  - {fileID: 15034181}
+  testEnemyPrefab: {fileID: 1794647967}
 --- !u!1 &2095923705
 GameObject:
   m_ObjectHideFlags: 0
