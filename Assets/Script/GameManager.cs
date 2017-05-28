@@ -8,6 +8,8 @@ public class GameManager : Singleton<GameManager>{
 
     public TowerButton ClickedButton { get; private set; }
 
+    //current selected tower
+    private Tower selectedTower;
 	// Use this for initialization
 	void Start () {
 	
@@ -30,6 +32,24 @@ public class GameManager : Singleton<GameManager>{
         ClickedButton = null;
     }
 
+    public void SelectTower(Tower tower)
+    {
+        if(selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+        selectedTower = tower;
+        selectedTower.Select();
+    }
+
+    public void DeselectTower()
+    {
+        if(selectedTower != null)
+        {
+            selectedTower.Select();
+        }
+        selectedTower = null;
+    }
     //can't build towers etc
     //private void HandleException()
     //{

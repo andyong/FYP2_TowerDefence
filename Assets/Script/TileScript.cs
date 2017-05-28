@@ -13,7 +13,9 @@ public class TileScript : MonoBehaviour {
     private SpriteRenderer spriteRenderer;
 
     //check if tile is available
-    public bool IsEmpty { get; private set; }
+    public bool IsEmpty { get; set; }
+
+    private Tower myTower;
 
 	// Use this for initialization
 	void Start () {
@@ -52,6 +54,17 @@ public class TileScript : MonoBehaviour {
                 PlaceTower();
             }
         }
+        else if(!EventSystem.current.IsPointerOverGameObject() && GameManager.Instance.ClickedButton == null && Input.GetMouseButtonDown(0))
+        {
+            if(myTower != null)
+            {
+                GameManager.Instance.SelectTower(myTower);
+            }
+            else
+            {
+                GameManager.Instance.DeselectTower();
+            }
+        }
     }
 
     private void OnMouseExit()
@@ -79,6 +92,8 @@ public class TileScript : MonoBehaviour {
         tower.GetComponent<SpriteRenderer>().sortingOrder = GridPosition.Y;
 
         tower.transform.SetParent(transform);
+
+        this.myTower = tower.transform.GetChild(0).GetComponent<Tower>();
 
         IsEmpty = false;
 

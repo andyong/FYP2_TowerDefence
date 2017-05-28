@@ -5,10 +5,13 @@ public class HoverIcon : Singleton<HoverIcon> {
 
 
     private SpriteRenderer spriteRenderer;
+
+    private SpriteRenderer rangeSpriteRenderer;
 	// Use this for initialization
 	void Start () {
         this.spriteRenderer = GetComponent<SpriteRenderer>();
-	}
+        this.rangeSpriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -28,10 +31,14 @@ public class HoverIcon : Singleton<HoverIcon> {
     {
         this.spriteRenderer.sprite = sprite;
         spriteRenderer.enabled = true;
+
+        rangeSpriteRenderer.enabled = true;
     }
 
     public void Deactivate()
     {
         spriteRenderer.enabled = false;
+
+        rangeSpriteRenderer.enabled = false;
     }
 }

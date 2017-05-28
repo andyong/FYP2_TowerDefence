@@ -33,7 +33,7 @@ public class UIManager : MonoBehaviour
             {
                 for (int i = 0; i < nextWaveLabels.Length; i++)
                 {
-                    nextWaveLabels[i].GetComponent<Animator>().SetTrigger("nextWave");
+                    //nextWaveLabels[i].GetComponent<Animator>().SetTrigger("nextWave");
 
                 }
             }

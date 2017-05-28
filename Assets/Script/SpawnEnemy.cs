@@ -58,10 +58,10 @@ public class SpawnEnemy : MonoBehaviour {
             if (enemiesSpawned == waves[currentWave].maxEnemies &&
                 GameObject.FindGameObjectWithTag("Enemy") == null)
             {
-                uiManager.Wave++;
-                uiManager.Gold = Mathf.RoundToInt(uiManager.Gold * 1.1f);
-                enemiesSpawned = 0;
-                lastSpawnTime = Time.time;
+                //uiManager.Wave++;
+                //uiManager.Gold = Mathf.RoundToInt(uiManager.Gold * 1.1f);
+                //enemiesSpawned = 0;
+                //lastSpawnTime = Time.time;
             }
             // 5 
         }

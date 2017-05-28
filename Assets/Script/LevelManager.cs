@@ -72,7 +72,10 @@ public class LevelManager : Singleton<LevelManager>{
 
 
         newTile.Setup(new Point(x, y), new Vector3(worldStartPoint.x + (TileSize * x), worldStartPoint.y - (TileSize * y), 0), map);
-
+        if(tileType == "1" || tileType == "6")
+        {
+            newTile.IsEmpty = false;
+        }
         
     }
 
