@@ -26,12 +26,16 @@ public class ShootEnemies : MonoBehaviour {
         float minimalEnemyDistance = float.MaxValue;
         foreach (GameObject enemy in enemiesInRange)
         {
-            float distanceToGoal = enemy.GetComponent<MoveEnemy>().distanceToGoal();
-            if (distanceToGoal < minimalEnemyDistance)
+            if(enemy!= null)
             {
-                target = enemy;
-                minimalEnemyDistance = distanceToGoal;
+                float distanceToGoal = enemy.GetComponent<MoveEnemy>().distanceToGoal();
+                if (distanceToGoal < minimalEnemyDistance)
+                {
+                    target = enemy;
+                    minimalEnemyDistance = distanceToGoal;
+                }
             }
+          
         }
         // 2
         if (target != null)
@@ -73,8 +77,8 @@ public class ShootEnemies : MonoBehaviour {
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Add(other.gameObject);
-            EnemyDestructionDelegate del =
-                other.gameObject.GetComponent<EnemyDestructionDelegate>();
+            EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
+            if(del!=null)
             del.enemyDelegate += OnEnemyDestroy;
         }
     }
@@ -84,8 +88,8 @@ public class ShootEnemies : MonoBehaviour {
         if (other.gameObject.tag.Equals("Enemy"))
         {
             enemiesInRange.Remove(other.gameObject);
-            EnemyDestructionDelegate del =
-                other.gameObject.GetComponent<EnemyDestructionDelegate>();
+            EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
+            if (del != null)
             del.enemyDelegate -= OnEnemyDestroy;
         }
     }

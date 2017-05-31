@@ -545,8 +545,8 @@ MonoBehaviour:
   - {fileID: 1225866531}
   - {fileID: 15034181}
   waves:
-  - enemyPrefab: {fileID: 197334, guid: 614f4dc81f2ad4dd0bb9a759c0274631, type: 2}
-    spawnInterval: 3
+  - enemyPrefab: {fileID: 190740, guid: b1658cfdc0079de44be290e2ff031282, type: 2}
+    spawnInterval: 1
     maxEnemies: 20
   timeBetweenWaves: 5
 --- !u!1 &325251324

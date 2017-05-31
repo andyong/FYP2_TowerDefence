@@ -31,19 +31,19 @@ public class BulletBehaviour : MonoBehaviour {
         {
             if (target != null)
             {
-                // 3
-                //Transform healthBarTransform = target.transform.FindChild("HealthBar");
-                //HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
-                //healthBar.currentHealth -= Mathf.Max(damage, 0);
-                //// 4
-                //if (healthBar.currentHealth <= 0)
-                //{
-                //    Destroy(target);
-                //    //AudioSource audioSource = target.GetComponent<AudioSource>();
-                //    //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+                 //3
+                Transform healthBarTransform = target.transform.FindChild("HealthBar");
+                HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
+                healthBar.currentHealth -= Mathf.Max(damage, 0);
+                // 4
+                if (healthBar.currentHealth <= 0)
+                {
+                    Destroy(target);
+                    //AudioSource audioSource = target.GetComponent<AudioSource>();
+                    //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
 
-                //    uiManager.Gold += 50;
-                //}
+                    uiManager.Gold += 50;
+                }
             }
             Destroy(gameObject);
         }
