@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 412706}
   - 212: {fileID: 21268388}
   - 58: {fileID: 5881456}
-  - 114: {fileID: 11465398}
+  - 114: {fileID: 11445758}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -28,8 +28,7 @@ GameObject:
   - 4: {fileID: 409182}
   - 212: {fileID: 21277144}
   - 58: {fileID: 5888286}
-  - 114: {fileID: 11406180}
-  - 114: {fileID: 11446542}
+  - 114: {fileID: 11412214}
   m_Layer: 2
   m_Name: aoe_tower
   m_TagString: Untagged
@@ -57,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122404}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.672, y: -0.723, z: 0}
-  m_LocalScale: {x: 5.6, y: 5.6, z: 1}
+  m_LocalPosition: {x: 0.681, y: -0.66, z: 0}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_Children: []
   m_Father: {fileID: 409182}
   m_RootOrder: 0
@@ -89,8 +88,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.68266654, y: -0.5802667}
   serializedVersion: 2
-  m_Radius: 2.5
---- !u!114 &11406180
+  m_Radius: 2
+--- !u!114 &11412214
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,25 +97,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 190102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6678699ec8be9294f95ebe01c34a80f7, type: 3}
+  m_Script: {fileID: 11500000, guid: b1861799c56c3b44787b36727c25e324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  attackCooldown: 2
---- !u!114 &11446542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 190102}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334aea945f43ccb4583fec06e02d0b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   bullet: {fileID: 155904, guid: 75c75bd3a99af9e4da1e2891d67b9687, type: 2}
-  fireRate: 1
---- !u!114 &11465398
+  target: {fileID: 0}
+  attackCooldown: 5
+--- !u!114 &11445758
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -124,11 +112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 122404}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334aea945f43ccb4583fec06e02d0b9e, type: 3}
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  fireRate: 0
+  enemiesInRange: []
 --- !u!212 &21268388
 SpriteRenderer:
   m_ObjectHideFlags: 1

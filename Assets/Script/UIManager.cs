@@ -62,8 +62,8 @@ public class UIManager : MonoBehaviour
             if (health <= 0 && !gameOver)
             {
                 gameOver = true;
-                GameObject gameOverText = GameObject.FindGameObjectWithTag("GameOver");
-                gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
+                //GameObject gameOverText = GameObject.FindGameObjectWithTag("GameOver");
+                //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
             }
             // 3 
             for (int i = 0; i < healthIndicator.Length; i++)

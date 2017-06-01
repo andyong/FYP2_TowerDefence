@@ -9,7 +9,7 @@ public class GameManager : Singleton<GameManager>{
     public TowerButton ClickedButton { get; private set; }
 
     //current selected tower
-    private Tower selectedTower;
+    private TowerRange selectedTower;
 	// Use this for initialization
 	void Start () {
 	
@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager>{
         ClickedButton = null;
     }
 
-    public void SelectTower(Tower tower)
+    public void SelectTower(TowerRange tower)
     {
         if(selectedTower != null)
         {

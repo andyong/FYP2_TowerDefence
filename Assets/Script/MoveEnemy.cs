@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class MoveEnemy : MonoBehaviour {
 
@@ -9,6 +10,7 @@ public class MoveEnemy : MonoBehaviour {
     private float lastWaypointSwitchTime;
     public float speed = 1.0f;
 
+    private List<Debuff> debuffs = new List<Debuff>();
 
 	// Use this for initialization
 	void Start () {
@@ -18,7 +20,7 @@ public class MoveEnemy : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        HandleDebuffs();
         // 1 
         Vector3 startPosition = waypoints[currentWaypoint].transform.position;
         Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
@@ -85,5 +87,22 @@ public class MoveEnemy : MonoBehaviour {
             distance += Vector3.Distance(startPosition, endPosition);
         }
         return distance;
+    }
+
+    public void AddDebuff(Debuff debuff)
+    {
+        if (!debuffs.Exists(x => x.GetType() == debuff.GetType()))
+        {
+            debuffs.Add(debuff);
+        }
+        
+    }
+
+    private void HandleDebuffs()
+    {
+        foreach(Debuff debuff in debuffs)
+        {
+            debuff.Update();
+        }
     }
 }

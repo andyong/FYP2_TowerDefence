@@ -15,7 +15,7 @@ public class TileScript : MonoBehaviour {
     //check if tile is available
     public bool IsEmpty { get; set; }
 
-    private Tower myTower;
+    private TowerRange myTower;
 
 	// Use this for initialization
 	void Start () {
@@ -93,7 +93,7 @@ public class TileScript : MonoBehaviour {
 
         tower.transform.SetParent(transform);
 
-        this.myTower = tower.transform.GetChild(0).GetComponent<Tower>();
+        this.myTower = tower.transform.GetChild(0).GetComponent<TowerRange>();
 
         IsEmpty = false;
 

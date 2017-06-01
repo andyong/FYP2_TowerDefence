@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 445134}
   - 212: {fileID: 21273256}
   - 58: {fileID: 5853926}
-  - 114: {fileID: 11440038}
   - 114: {fileID: 11481240}
   m_Layer: 2
   m_Name: fire_tower
@@ -29,7 +28,7 @@ GameObject:
   - 4: {fileID: 481902}
   - 212: {fileID: 21216138}
   - 58: {fileID: 5818984}
-  - 114: {fileID: 11417082}
+  - 114: {fileID: 11463794}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -57,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173216}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.707, y: -0.699, z: 0}
-  m_LocalScale: {x: 5.6, y: 5.6, z: 1}
+  m_LocalPosition: {x: 0.707, y: -0.599, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 445134}
   m_RootOrder: 0
@@ -89,8 +88,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.68266654, y: -0.5802667}
   serializedVersion: 2
-  m_Radius: 2.5
---- !u!114 &11417082
+  m_Radius: 1.5
+--- !u!114 &11463794
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -98,24 +97,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 173216}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334aea945f43ccb4583fec06e02d0b9e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
-  fireRate: 0
---- !u!114 &11440038
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154326}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6678699ec8be9294f95ebe01c34a80f7, type: 3}
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
-  attackCooldown: 2
 --- !u!114 &11481240
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -124,11 +109,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 154326}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 334aea945f43ccb4583fec06e02d0b9e, type: 3}
+  m_Script: {fileID: 11500000, guid: 62eb40a206cacf041ae5e45ebbf6ab22, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  enemiesInRange: []
   bullet: {fileID: 149610, guid: b79a5d9d775d5fe4b9e32fa560267618, type: 2}
-  fireRate: 1
+  target: {fileID: 0}
+  attackCooldown: 5
 --- !u!212 &21216138
 SpriteRenderer:
   m_ObjectHideFlags: 1

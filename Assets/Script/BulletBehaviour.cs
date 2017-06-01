@@ -35,6 +35,7 @@ public class BulletBehaviour : MonoBehaviour {
                 Transform healthBarTransform = target.transform.FindChild("HealthBar");
                 HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
                 healthBar.currentHealth -= Mathf.Max(damage, 0);
+                ApplyDebuff();
                 // 4
                 if (healthBar.currentHealth <= 0)
                 {
@@ -48,4 +49,9 @@ public class BulletBehaviour : MonoBehaviour {
             Destroy(gameObject);
         }
 	}
+
+    private void ApplyDebuff()
+    {
+        target.GetComponent<MoveEnemy>().AddDebuff(new FireDebuff(target));
+    }
 }
