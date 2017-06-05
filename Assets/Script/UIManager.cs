@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -62,6 +63,7 @@ public class UIManager : MonoBehaviour
             if (health <= 0 && !gameOver)
             {
                 gameOver = true;
+                SceneManager.LoadScene("lose");
                 //GameObject gameOverText = GameObject.FindGameObjectWithTag("GameOver");
                 //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
             }
@@ -83,7 +85,7 @@ public class UIManager : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Gold = 1000;
+        Gold = 500;
         Wave = 0;
         Health = 5;
     }

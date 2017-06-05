@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 [System.Serializable]
 public class Wave
@@ -58,16 +59,17 @@ public class SpawnEnemy : MonoBehaviour {
             if (enemiesSpawned == waves[currentWave].maxEnemies &&
                 GameObject.FindGameObjectWithTag("Enemy") == null)
             {
-                //uiManager.Wave++;
-                //uiManager.Gold = Mathf.RoundToInt(uiManager.Gold * 1.1f);
-                //enemiesSpawned = 0;
-                //lastSpawnTime = Time.time;
+                uiManager.Wave++;
+                uiManager.Gold = Mathf.RoundToInt(uiManager.Gold * 1.1f);
+                enemiesSpawned = 0;
+                lastSpawnTime = Time.time;
             }
             // 5 
         }
         else
         {
-            //uiManager.gameOver = true;
+            uiManager.gameOver = true;
+            SceneManager.LoadScene("win");
             //GameObject gameOverText = GameObject.FindGameObjectWithTag("GameWon");
             //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
         }	

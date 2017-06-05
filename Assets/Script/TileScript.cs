@@ -17,9 +17,13 @@ public class TileScript : MonoBehaviour {
 
     private TowerRange myTower;
 
+    private UIManager uiManager;
+
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponent<SpriteRenderer>();
+
+        uiManager =GameObject.Find("GameManager").GetComponent<UIManager>();
 	}
 	
 	// Update is called once per frame
@@ -51,6 +55,7 @@ public class TileScript : MonoBehaviour {
             }
             else if (Input.GetMouseButtonDown(0))
             {
+                if(uiManager.Gold>0)
                 PlaceTower();
             }
         }
@@ -100,6 +105,9 @@ public class TileScript : MonoBehaviour {
         SetColorTile(Color.white);
 
         GameManager.Instance.TowerBought();
+
+        if (uiManager.Gold > 99)
+        uiManager.Gold -= 100;
 
         Debug.Log("placing a tower");
     }

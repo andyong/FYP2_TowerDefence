@@ -102,8 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
-  target: {fileID: 0}
-  attackCooldown: 3
+  attackCooldown: 1
 --- !u!114 &11430372
 MonoBehaviour:
   m_ObjectHideFlags: 1
