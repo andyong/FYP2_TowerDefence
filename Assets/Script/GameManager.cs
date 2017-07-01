@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public delegate void CurrencyChanged();
 
 public class GameManager : Singleton<GameManager>{
-
-    //private TowerButton clickedTower;
+    public event CurrencyChanged Changed;
 
     public TowerButton ClickedButton { get; private set; }
 
     //current selected tower
     private TowerRange selectedTower;
+    
+    public GameObject waveBtn;
 	// Use this for initialization
 	void Start () {
 	
@@ -22,14 +24,29 @@ public class GameManager : Singleton<GameManager>{
 
     public void PickTower(TowerButton towerButton)
     {
-        this.ClickedButton = towerButton;
-        HoverIcon.Instance.Activate(towerButton.Sprite);
+        if (UIManager.Instance.Gold >= towerButton.Price && SpawnEnemy.Instance.startnewwave == false)
+        {
+            this.ClickedButton = towerButton;
+            HoverIcon.Instance.Activate(towerButton.Sprite);
+        }
     }
 
     public void TowerBought()
     {
-        HoverIcon.Instance.Deactivate();
-        ClickedButton = null;
+        if (UIManager.Instance.Gold >= ClickedButton.Price)
+        {
+            UIManager.Instance.Gold -= ClickedButton.Price;
+            HoverIcon.Instance.Deactivate();
+            ClickedButton = null;
+        }
+    }
+
+    public void OnCurrencyChanged()
+    {
+        if(Changed != null)
+        {
+            Changed();
+        }
     }
 
     public void SelectTower(TowerRange tower)
@@ -51,11 +68,24 @@ public class GameManager : Singleton<GameManager>{
         selectedTower = null;
     }
     //can't build towers etc
-    //private void HandleException()
-    //{
-    //    if (Input.touchCount > 0)
-    //    {
-    //        HoverIcon.Instance.Deactivate();
-    //    }
-    //}
+    private void HandleException()
+    {
+        if (Input.touchCount > 0)
+        {
+            HoverIcon.Instance.Deactivate();
+        }
+    }
+
+    public void StartWave()
+    {
+        //UIManager.Instance.Wave++;
+        //StartCoroutine(SpawnWave());
+        SpawnEnemy.Instance.startnewwave = true;
+        waveBtn.SetActive(false);
+    }
+
+    private IEnumerator SpawnWave()
+    {
+        yield return new WaitForSeconds(2.5f);
+    }
 }

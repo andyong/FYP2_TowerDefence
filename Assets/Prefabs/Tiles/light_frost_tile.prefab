@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 414720}
   - 212: {fileID: 21246054}
   - 61: {fileID: 6182322}
+  - 114: {fileID: 11442422}
   m_Layer: 0
   m_Name: light_frost_tile
   m_TagString: Untagged
@@ -43,6 +44,17 @@ BoxCollider2D:
   m_Offset: {x: 0.6666667, y: -0.6666667}
   serializedVersion: 2
   m_Size: {x: 1.3333334, y: 1.3333334}
+--- !u!114 &11442422
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 124478}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1fd87c80accf40f47973fe9b4bf0ed16, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &21246054
 SpriteRenderer:
   m_ObjectHideFlags: 1

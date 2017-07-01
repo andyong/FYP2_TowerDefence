@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class TowerButton : MonoBehaviour {
@@ -7,6 +8,18 @@ public class TowerButton : MonoBehaviour {
     private GameObject towerPrefab;
     [SerializeField]
     private Sprite sprite;
+    [SerializeField]
+    private int price;
+    [SerializeField]
+    private Text priceText;
+
+
+    private void Start()
+    {
+        priceText.text = "$" + price;
+
+        GameManager.Instance.Changed += new CurrencyChanged(CheckPrice);
+    }
 
     public GameObject TowerPrefab
     {
@@ -20,6 +33,30 @@ public class TowerButton : MonoBehaviour {
         get
         {
             return sprite;
+        }
+    }
+
+    public int Price
+    {
+        get
+        {
+            return price;
+        }
+    }
+    
+    private void CheckPrice()
+    {
+        //enough money
+        if(price <= UIManager.Instance.Gold)
+        {
+            GetComponent<Image>().color = Color.white;
+            priceText.color = Color.white;
+        }
+        //too poor
+        else
+        {
+            GetComponent<Image>().color = Color.grey;
+            priceText.color = Color.grey;
         }
     }
 }

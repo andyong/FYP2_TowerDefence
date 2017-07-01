@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class UIManager : MonoBehaviour
+public class UIManager : Singleton<UIManager>
 {
 
     public Text goldLabel;
@@ -13,8 +13,9 @@ public class UIManager : MonoBehaviour
         get { return gold; }
         set
         {
-            gold = value;
+            this.gold = value;
             goldLabel.GetComponent<Text>().text = "GOLD: " + gold;
+            GameManager.Instance.OnCurrencyChanged();
         }
     }
 
@@ -23,6 +24,7 @@ public class UIManager : MonoBehaviour
 
     public bool gameOver = false;
 
+    [SerializeField]
     private int wave;
     public int Wave
     {
@@ -51,11 +53,6 @@ public class UIManager : MonoBehaviour
         get { return health; }
         set
         {
-            // 1
-            //if (value < health)
-            //{
-            //    Camera.main.GetComponent<CameraShake>().Shake();
-            //}
             // 2
             health = value;
             healthLabel.text = "HEALTH: " + health;
@@ -86,7 +83,7 @@ public class UIManager : MonoBehaviour
     void Start()
     {
         Gold = 500;
-        Wave = 0;
+        Wave = wave;
         Health = 5;
     }
 

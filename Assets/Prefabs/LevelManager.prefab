@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &109176
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 453926}
+  - 114: {fileID: 11488794}
+  m_Layer: 0
+  m_Name: LevelManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &453926
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109176}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.9276512, y: 0.90379244, z: -0.015625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11488794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 109176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e56650e3c879a4448c18df234577acc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilePrefabs:
+  - {fileID: 138674, guid: 13a22daed82d7c14fb9e8debb7e93728, type: 2}
+  - {fileID: 180292, guid: 73ed88558107ca747b1fd7bab48fbebd, type: 2}
+  - {fileID: 152296, guid: 8eb975ba6b849f14f94458488a1a7f6a, type: 2}
+  - {fileID: 124478, guid: 3cc152833b3d49943b8147a9685ee37f, type: 2}
+  - {fileID: 161250, guid: acfc242da502cc4419075833c430b1b5, type: 2}
+  - {fileID: 152010, guid: 1cc56c5db7e0311448f91fa0195f573d, type: 2}
+  - {fileID: 135964, guid: 7f76ce0fd4849154fb9cd532ac6460eb, type: 2}
+  - {fileID: 124792, guid: 9162ee6f17d29d7488bb8e5dcf72163b, type: 2}
+  - {fileID: 160214, guid: faa9d3a4e8176ba40b385f17e860e8ac, type: 2}
+  map: {fileID: 0}
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 109176}
+  m_IsPrefabParent: 1

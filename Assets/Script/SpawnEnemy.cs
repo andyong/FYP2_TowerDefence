@@ -10,7 +10,7 @@ public class Wave
     public int maxEnemies = 20;
 }
 
-public class SpawnEnemy : MonoBehaviour {
+public class SpawnEnemy : Singleton<SpawnEnemy>{
 
     public GameObject[] waypoints;
     //public GameObject testEnemyPrefab;
@@ -18,20 +18,18 @@ public class SpawnEnemy : MonoBehaviour {
     public Wave[] waves;
     public int timeBetweenWaves = 5;
 
-    private UIManager uiManager;
-
     private float lastSpawnTime;
     private int enemiesSpawned = 0;
+
+    public bool startnewwave = false;
 
 	// Use this for initialization
 	void Start () { 
 
         //Instantiate(testEnemyPrefab).GetComponent<MoveEnemy>().waypoints = waypoints;
-
+        
         lastSpawnTime = Time.time;
-        uiManager =
-            GameObject.Find("GameManager").GetComponent<UIManager>();
-
+        //LevelManager.Instance.CreateLevel();
         //Debug.Log(testEnemyPrefab.GetComponent<MoveEnemy>().waypoints);
 	
 	}
@@ -39,39 +37,53 @@ public class SpawnEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         // 1
-        int currentWave = uiManager.Wave;
+        int currentWave = UIManager.Instance.Wave;
         if (currentWave < waves.Length)
         {
-            // 2
-            float timeInterval = Time.time - lastSpawnTime;
-            float spawnInterval = waves[currentWave].spawnInterval;
-            if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) ||
-                 timeInterval > spawnInterval) &&
-                enemiesSpawned < waves[currentWave].maxEnemies)
+            if (startnewwave)
             {
-                // 3  
-                lastSpawnTime = Time.time;
-                GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemyPrefab);
-                newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
-                enemiesSpawned++;
+                // 2
+                float timeInterval = Time.time - lastSpawnTime;
+                float spawnInterval = waves[currentWave].spawnInterval;
+                if (((enemiesSpawned == 0 && timeInterval > timeBetweenWaves) ||
+                     timeInterval > spawnInterval) &&
+                    enemiesSpawned < waves[currentWave].maxEnemies)
+                {
+                    // 3  
+                    lastSpawnTime = Time.time;
+                    GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemyPrefab);
+                    newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+                    enemiesSpawned++;
+                }
+                // 4 
+                if (enemiesSpawned == waves[currentWave].maxEnemies &&
+                    GameObject.FindGameObjectWithTag("Enemy") == null)
+                {
+                    UIManager.Instance.Wave++;
+                    startnewwave = false;
+                    GameManager.Instance.waveBtn.SetActive(true);
+                    if(UIManager.Instance.Wave == 3)
+                    {
+                        SceneManager.LoadScene("darkscene");
+                    }
+                    else if (UIManager.Instance.Wave == 6)
+                    {
+                        SceneManager.LoadScene("waterscene");
+                    }
+                    else if (UIManager.Instance.Wave == 9)
+                    {
+                        SceneManager.LoadScene("windscene");
+                    }
+                   
+                    enemiesSpawned = 0;
+                    lastSpawnTime = Time.time;
+                }
             }
-            // 4 
-            if (enemiesSpawned == waves[currentWave].maxEnemies &&
-                GameObject.FindGameObjectWithTag("Enemy") == null)
-            {
-                uiManager.Wave++;
-                uiManager.Gold = Mathf.RoundToInt(uiManager.Gold * 1.1f);
-                enemiesSpawned = 0;
-                lastSpawnTime = Time.time;
-            }
-            // 5 
         }
         else
         {
-            uiManager.gameOver = true;
+            UIManager.Instance.gameOver = true;
             SceneManager.LoadScene("win");
-            //GameObject gameOverText = GameObject.FindGameObjectWithTag("GameWon");
-            //gameOverText.GetComponent<Animator>().SetBool("gameOver", true);
         }	
 	
 	}

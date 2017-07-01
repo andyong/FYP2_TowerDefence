@@ -3,8 +3,8 @@ using System.Collections;
 
 public class HealthBar : MonoBehaviour {
 
-    public float maxHealth = 100;
-    public float currentHealth = 100;
+    public float maxHealth;
+    public float currentHealth;
     private float originalScale;
 
 	// Use this for initialization
