@@ -8,6 +8,14 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene/mainmenu.unity
   - enabled: 1
+    path: Assets/Scene/lose.unity
+  - enabled: 1
+    path: Assets/Scene/win.unity
+  - enabled: 1
+    path: Assets/Scene/help.unity
+  - enabled: 1
+    path: Assets/Scene/settings.unity
+  - enabled: 1
     path: Assets/Scene/firescene.unity
   - enabled: 1
     path: Assets/Scene/darkscene.unity
@@ -15,7 +23,3 @@ EditorBuildSettings:
     path: Assets/Scene/waterscene.unity
   - enabled: 1
     path: Assets/Scene/windscene.unity
-  - enabled: 1
-    path: Assets/Scene/lose.unity
-  - enabled: 1
-    path: Assets/Scene/win.unity

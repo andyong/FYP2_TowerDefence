@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public delegate void CurrencyChanged();
 
 public class GameManager : Singleton<GameManager>{
+
     public event CurrencyChanged Changed;
 
     public TowerButton ClickedButton { get; private set; }
@@ -89,3 +91,4 @@ public class GameManager : Singleton<GameManager>{
         yield return new WaitForSeconds(2.5f);
     }
 }
+
