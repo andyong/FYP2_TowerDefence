@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class AoeTower : Tower {
+public class AoeTower : Tower
+{
 
     private void Start()
     {
@@ -11,6 +12,7 @@ public class AoeTower : Tower {
 
     public override Debuff GetDebuff()
     {
-        return null;
+        return new AoeDebuff(target);
+        //return null;
     }
 }

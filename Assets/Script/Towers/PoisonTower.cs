@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class PoisonTower : Tower {
+public class PoisonTower : Tower
+{
 
     private void Start()
     {
@@ -11,6 +12,7 @@ public class PoisonTower : Tower {
 
     public override Debuff GetDebuff()
     {
-        return null;
+        return new PoisonDebuff(target);
+        //return null;
     }
 }

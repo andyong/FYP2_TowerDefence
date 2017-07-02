@@ -2,7 +2,8 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class FireTower : Tower {
+public class FireTower : Tower
+{
 
     private void Start()
     {
@@ -11,7 +12,8 @@ public class FireTower : Tower {
 
     public override Debuff GetDebuff()
     {
-        //return new FireDebuff(target);
-        return null;
+
+        return new FireDebuff(target);
+        //return null;
     }
 }

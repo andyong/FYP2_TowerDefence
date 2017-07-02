@@ -46,12 +46,11 @@ public class LevelManager : Singleton<LevelManager>{
 	
 	// Update is called once per frame
 	void Update () {
-        Debug.Log(UIManager.Instance.Wave);
 	}
 
     private void TestDictionary()
     {
-        Dictionary<string, int> testDictionary = new Dictionary<string, int>();
+        //Dictionary<string, int> testDictionary = new Dictionary<string, int>();
     }
 
 

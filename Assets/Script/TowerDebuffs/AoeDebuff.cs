@@ -1,13 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class FrostDebuff : Debuff
+public class AoeDebuff : Debuff
 {
-
-    public FrostDebuff(MoveEnemy target)
+    public AoeDebuff(MoveEnemy target)
         : base(target)
     {
-        Debug.Log("FrostDebuff");
+        Debug.Log("AoeDebuff");
     }
 
     public override void Update()
@@ -15,4 +14,5 @@ public class FrostDebuff : Debuff
 
         base.Update();
     }
+
 }

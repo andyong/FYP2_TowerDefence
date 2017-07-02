@@ -114,6 +114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   bullet: {fileID: 155410, guid: 54003da3f6f88d849a9f8ecb6112528b, type: 2}
+  damage: 5
+  speed: 10
   attackCooldown: 1.5
 --- !u!212 &21205584
 SpriteRenderer:

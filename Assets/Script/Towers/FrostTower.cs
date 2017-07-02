@@ -2,15 +2,17 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class FrostTower : Tower {
+public class FrostTower : Tower
+{
 
-	private void Start()
+    private void Start()
     {
         ElementType = Element.FROST;
     }
 
     public override Debuff GetDebuff()
     {
-        return null;
+        return new FrostDebuff(target);
+        //sreturn null;
     }
 }

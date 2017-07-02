@@ -102,6 +102,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   bullet: {fileID: 155904, guid: 75c75bd3a99af9e4da1e2891d67b9687, type: 2}
+  damage: 10
+  speed: 10
   attackCooldown: 1
 --- !u!114 &11445758
 MonoBehaviour:

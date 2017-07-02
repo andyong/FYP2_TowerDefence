@@ -1,15 +1,18 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PoisonDebuff : MonoBehaviour {
+public class PoisonDebuff : Debuff
+{
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+    public PoisonDebuff(MoveEnemy target)
+        : base(target)
+    {
+        Debug.Log("PoisonDebuff");
+    }
+
+    public override void Update()
+    {
+
+        base.Update();
+    }
 }

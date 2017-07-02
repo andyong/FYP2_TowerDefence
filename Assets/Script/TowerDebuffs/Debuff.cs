@@ -1,23 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public abstract class Debuff {
+public abstract class Debuff
+{
+    protected MoveEnemy target;
 
-    //// Use this for initialization
-    //void Start () {
-	
-    //}
-	
-    //// Update is called once per frame
-    //void Update () {
-	
-    //}
-
-    public GameObject target;
-
-    public Debuff(GameObject target)
+    public Debuff(MoveEnemy target)
     {
         this.target = target;
+
     }
 
     public virtual void Update()

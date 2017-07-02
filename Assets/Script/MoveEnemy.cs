@@ -21,6 +21,16 @@ public class MoveEnemy : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         HandleDebuffs();
+        Move();
+	}
+
+    public void Spawn()
+    {
+        transform.position = new Vector3(-9.5f, 3.0f, 0);
+    }
+
+    private void Move()
+    {
         // 1 
         Vector3 startPosition = waypoints[currentWaypoint].transform.position;
         Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
@@ -49,13 +59,10 @@ public class MoveEnemy : MonoBehaviour {
                 //AudioSource audioSource = gameObject.GetComponent<AudioSource>();
                 //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                 // TODO: deduct health
-                UIManager uiManager =
-                GameObject.Find("GameManager").GetComponent<UIManager>();
-                uiManager.Health -= 1;
+                GameManager.Instance.Health -= 1;
             }
         }
-	
-	}
+    }
 
     private void RotateIntoMoveDirection()
     {
@@ -103,6 +110,21 @@ public class MoveEnemy : MonoBehaviour {
         foreach(Debuff debuff in debuffs)
         {
             debuff.Update();
+        }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        Transform healthBarTransform = transform.FindChild("HealthBar");
+        HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();
+        healthBar.currentHealth -= Mathf.Max(damage, 0);
+
+        if (healthBar.currentHealth <= 0)
+        {
+            Destroy(gameObject);
+            //AudioSource audioSource = target.GetComponent<AudioSource>();
+            //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
+            GameManager.Instance.Currency += 50;
         }
     }
 }

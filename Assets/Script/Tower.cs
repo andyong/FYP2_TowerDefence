@@ -5,17 +5,52 @@ using System.Collections.Generic;
 public enum Element {AOE, FIRE, FROST, POISON, NONE }
 
 public abstract class Tower : MonoBehaviour {
-    public List<GameObject> enemiesInRange;
+    public List<MoveEnemy> enemiesInRange;
 
     [SerializeField]
     public GameObject bullet;
 
-    
+    protected MoveEnemy target;
+
+    public MoveEnemy Target
+    {
+        get { return target; }
+    }
+
+    [SerializeField]
+    private float debuffDuration;
+
+    public float DebuffDuration
+    {
+        get { return debuffDuration; }
+        set { this.debuffDuration = value; }
+    }
+
+    [SerializeField]
+    private float proc;
+
+    [SerializeField]
+    private int damage;
+
+    public int Damage
+    {
+        get { return damage; }
+    }
+
+    [SerializeField]
+    private int speed;
+
+    public int Speed
+    {
+        get { return speed; }
+    }
 
     //private Tower towerData;
 
     private bool canAttack = true;
+
     private float attackTimer;
+
     [SerializeField]
     private float attackCooldown;
 
@@ -23,18 +58,25 @@ public abstract class Tower : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        enemiesInRange = new List<GameObject>();
+        enemiesInRange = new List<MoveEnemy>();
         //towerData = gameObject.GetComponentInChildren<Tower>();
 	}
 	
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(target);
-        GameObject target = null;
+
+        Attack();
+	}
+
+    private void Attack()
+    {
         // 1
         float minimalEnemyDistance = float.MaxValue;
-        foreach (GameObject enemy in enemiesInRange)
+
+        foreach (MoveEnemy enemy in enemiesInRange)
         {
+            // if enemy in range, make it to tower's target
             if (enemy != null)
             {
                 float distanceToGoal = enemy.GetComponent<MoveEnemy>().distanceToGoal();
@@ -71,9 +113,9 @@ public abstract class Tower : MonoBehaviour {
             //    Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
             //    new Vector3(0, 0, 1));
         }
-	}
+    }
 
-    void OnEnemyDestroy(GameObject enemy)
+    void OnEnemyDestroy(MoveEnemy enemy)
     {
         enemiesInRange.Remove(enemy);
     }
@@ -83,7 +125,7 @@ public abstract class Tower : MonoBehaviour {
         // 2
         if (other.gameObject.tag.Equals("Enemy"))
         {
-            enemiesInRange.Add(other.gameObject);
+            enemiesInRange.Add(other.gameObject.GetComponent<MoveEnemy>());
             EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
             if (del != null)
                 del.enemyDelegate += OnEnemyDestroy;
@@ -94,7 +136,7 @@ public abstract class Tower : MonoBehaviour {
     {
         if (other.gameObject.tag.Equals("Enemy"))
         {
-            enemiesInRange.Remove(other.gameObject);
+            enemiesInRange.Remove(other.gameObject.GetComponent<MoveEnemy>());
             EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
             if (del != null)
                 del.enemyDelegate -= OnEnemyDestroy;
@@ -117,9 +159,11 @@ public abstract class Tower : MonoBehaviour {
         GameObject newBullet = (GameObject)Instantiate(bulletPrefab);
         newBullet.transform.position = startPosition;
         BulletBehaviour bulletComp = newBullet.GetComponent<BulletBehaviour>();
-        bulletComp.target = target.gameObject;
+        bulletComp.target = target.gameObject.GetComponent<MoveEnemy>();
         bulletComp.startPosition = startPosition;
         bulletComp.targetPosition = targetPosition;
+
+        bulletComp.Initialize(this);
 
         if (bulletPrefab.transform.position == target.transform.position)
         {

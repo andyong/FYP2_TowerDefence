@@ -3,7 +3,7 @@ using System.Collections;
 
 public class EnemyDestructionDelegate : MonoBehaviour {
 
-    public delegate void EnemyDelegate(GameObject enemy);
+    public delegate void EnemyDelegate(MoveEnemy enemy);
     public EnemyDelegate enemyDelegate;
 	// Use this for initialization
 	void Start () {
@@ -19,7 +19,7 @@ public class EnemyDestructionDelegate : MonoBehaviour {
     {
         if(enemyDelegate != null)
         {
-            enemyDelegate(gameObject);
+            enemyDelegate(gameObject.GetComponent<MoveEnemy>());
         }
     }
 }
