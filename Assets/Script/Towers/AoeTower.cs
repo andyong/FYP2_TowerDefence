@@ -12,7 +12,7 @@ public class AoeTower : Tower
 
     public override Debuff GetDebuff()
     {
-        return new AoeDebuff(target);
+        return new AoeDebuff(target, DebuffDuration);
         //return null;
     }
 }

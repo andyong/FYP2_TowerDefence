@@ -5,7 +5,7 @@ public class PoisonDebuff : Debuff
 {
 
     public PoisonDebuff(MoveEnemy target)
-        : base(target)
+        : base(target, 1)
     {
         Debug.Log("PoisonDebuff");
     }

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class FrostTower : Tower
 {
+    [SerializeField]
+    private float slowingFactor;
 
     private void Start()
     {
@@ -12,7 +14,6 @@ public class FrostTower : Tower
 
     public override Debuff GetDebuff()
     {
-        return new FrostDebuff(target);
-        //sreturn null;
+        return new FrostDebuff(slowingFactor, DebuffDuration, target);
     }
 }

@@ -8,14 +8,17 @@ public class MoveEnemy : MonoBehaviour {
     public GameObject[] waypoints;
     private int currentWaypoint = 0;
     private float lastWaypointSwitchTime;
-    public float speed = 1.0f;
+    public float speed;
 
     private List<Debuff> debuffs = new List<Debuff>();
 
+    private List<Debuff> debuffsToRemove = new List<Debuff>();
+
+    private List<Debuff> newDebuffs = new List<Debuff>();
 	// Use this for initialization
 	void Start () {
         lastWaypointSwitchTime = Time.time;
-	
+        MaxSpeed = speed;
 	}
 	
 	// Update is called once per frame
@@ -23,6 +26,8 @@ public class MoveEnemy : MonoBehaviour {
         HandleDebuffs();
         Move();
 	}
+
+    public float MaxSpeed { get; set; }
 
     public void Spawn()
     {
@@ -100,13 +105,32 @@ public class MoveEnemy : MonoBehaviour {
     {
         if (!debuffs.Exists(x => x.GetType() == debuff.GetType()))
         {
-            debuffs.Add(debuff);
+            newDebuffs.Add(debuff);
         }
         
     }
 
+    public void RemoveDebuff(Debuff debuff)
+    {
+        debuffsToRemove.Add(debuff);
+    }
+
     private void HandleDebuffs()
     {
+        if(newDebuffs.Count > 0)
+        {
+            debuffs.AddRange(newDebuffs);
+
+            newDebuffs.Clear();
+        }
+
+        foreach (Debuff debuff in debuffsToRemove)
+        {
+            debuffs.Remove(debuff);
+        }
+
+        debuffsToRemove.Clear();
+
         foreach(Debuff debuff in debuffs)
         {
             debuff.Update();

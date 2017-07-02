@@ -7,7 +7,7 @@ public class FireDebuff : Debuff
     //public int damage = 1;
 
     public FireDebuff(MoveEnemy target)
-        : base(target)
+        : base(target, 1)
     {
         Debug.Log("FireDebuff");
     }

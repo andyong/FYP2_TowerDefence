@@ -3,16 +3,33 @@ using System.Collections;
 
 public class AoeDebuff : Debuff
 {
-    public AoeDebuff(MoveEnemy target)
-        : base(target)
+    //private float slowingFactor;
+
+    //private bool applied;
+
+    public AoeDebuff(MoveEnemy target, float duration)
+        : base(target, duration)
     {
-        Debug.Log("AoeDebuff");
+        if(target != null)
+        {
+            target.speed = 0;
+        }
+        //Debug.Log("AoeDebuff");
     }
 
-    public override void Update()
-    {
+    //public override void Update()
+    //{
 
-        base.Update();
+    //    base.Update();
+    //}
+
+    public override void Remove()
+    {
+        if (target != null)
+        {
+            target.speed = target.MaxSpeed;
+            base.Remove();
+        }
     }
 
 }
