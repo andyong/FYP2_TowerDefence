@@ -8,7 +8,15 @@ public class MoveEnemy : MonoBehaviour {
     public GameObject[] waypoints;
     private int currentWaypoint = 0;
     private float lastWaypointSwitchTime;
-    public float speed = 1.0f;
+
+    [SerializeField]
+    private float speed;
+
+    public float Speed
+    {
+        get { return speed; }
+        set { this.speed = value; }
+    }
 
     private List<Debuff> debuffs = new List<Debuff>();
 
@@ -16,10 +24,15 @@ public class MoveEnemy : MonoBehaviour {
 
     private List<Debuff> newDebuffs = new List<Debuff>();
 
+    private void Awake()
+    {
+        MaxSpeed = speed;
+    }
+
 	// Use this for initialization
 	void Start () {
         lastWaypointSwitchTime = Time.time;
-	
+        //MaxSpeed = speed;
 	}
 	
 	// Update is called once per frame
@@ -27,6 +40,8 @@ public class MoveEnemy : MonoBehaviour {
         HandleDebuffs();
         Move();
 	}
+
+    public float MaxSpeed { get; set; }
 
     public void Spawn()
     {
@@ -40,9 +55,13 @@ public class MoveEnemy : MonoBehaviour {
         Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
         // 2 
         float pathLength = Vector3.Distance(startPosition, endPosition);
+
         float totalTimeForPath = pathLength / speed;
+
         float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
+
         gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+
         // 3 
         if (gameObject.transform.position.Equals(endPosition)) // enemy reached next waypoint 
         {
@@ -104,8 +123,7 @@ public class MoveEnemy : MonoBehaviour {
     {
         if (!debuffs.Exists(x => x.GetType() == debuff.GetType()))
         {
-            Debug.Log("Apply");
-            debuffs.Add(debuff);
+            newDebuffs.Add(debuff);
         }
         
     }
@@ -117,7 +135,7 @@ public class MoveEnemy : MonoBehaviour {
 
     private void HandleDebuffs()
     {
-        if (newDebuffs.Count > 0)
+        if(newDebuffs.Count > 0)
         {
             debuffs.AddRange(newDebuffs);
 

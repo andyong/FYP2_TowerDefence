@@ -85,6 +85,14 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &59182075 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 115380, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
+--- !u!1 &120184532 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 179018, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &188580066
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +261,10 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &299643245 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 155430, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &325251324
 GameObject:
   m_ObjectHideFlags: 0
@@ -400,6 +412,10 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 2.65, y: -1.98}
   m_UseGraphicAlpha: 1
+--- !u!1 &512972597 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 172128, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &566200112
 GameObject:
   m_ObjectHideFlags: 0
@@ -711,6 +727,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a35fbfb8b9f4b5428d8cd1c7f461e76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &764898956 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 106510, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &806492298
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +868,14 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: a768fcb413b0aa448919a987675ff6c9, type: 3}
   price: 80
   priceText: {fileID: 2086455964}
+--- !u!1 &857561766 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 130338, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
+--- !u!1 &911142398 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 133078, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &949917762
 GameObject:
   m_ObjectHideFlags: 0
@@ -861,7 +889,7 @@ GameObject:
   - 114: {fileID: 949917764}
   - 114: {fileID: 949917767}
   m_Layer: 5
-  m_Name: Aoe
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -956,7 +984,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8b5eaf8b74e98524e9fe1ea4e7ff68d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a6ba528d20b1874c85369ff7724b2fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -981,8 +1009,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3cdc5f021d8014182a165d5661e0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 190102, guid: a7f74a1b0ee885e4ea3300f449cd4cdc, type: 2}
-  sprite: {fileID: 21300000, guid: 97a77921baa55094a8cb2a0698615807, type: 3}
+  towerPrefab: {fileID: 118698, guid: 0b30da351e1e67049b8752168ed4c3c4, type: 2}
+  sprite: {fileID: 21300000, guid: 4667ab8d362c55b4285462651ecce5f2, type: 3}
   price: 60
   priceText: {fileID: 1854768488}
 --- !u!1 &955385940
@@ -1514,6 +1542,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1cf7f95ec70e9dc49b51226e2b68bac4, type: 3}
   price: 100
   priceText: {fileID: 566200114}
+--- !u!1 &1199765035 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 178718, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &1254640991
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1738,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70e52043b1f97c948919d39e871a08bf, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1399096846 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 119436, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1001 &1472092999
 Prefab:
   m_ObjectHideFlags: 0
@@ -1839,6 +1875,10 @@ Prefab:
       propertyPath: waves.Array.data[0].enemyPrefab
       value: 
       objectReference: {fileID: 160942, guid: 21b79345e640b8846994e806a9699db7, type: 2}
+    - target: {fileID: 11426992, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
   m_IsPrefabParent: 0
@@ -2126,6 +2166,14 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ff4eebe7371952645acb407edcb21dc1, type: 3}
   price: 150
   priceText: {fileID: 990361052}
+--- !u!1 &1802181520 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 182506, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
+--- !u!1 &1819762657 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 106966, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &1854768486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2199,6 +2247,10 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1854768486}
+--- !u!1 &1912972818 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 121960, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
+  m_PrefabInternal: {fileID: 1508059265}
 --- !u!1 &2020514416
 GameObject:
   m_ObjectHideFlags: 0
@@ -2465,7 +2517,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c0aac49b483453408fa96a726abaefd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waypoints:
+  - {fileID: 1399096846}
+  - {fileID: 59182075}
+  - {fileID: 120184532}
+  - {fileID: 299643245}
+  - {fileID: 1199765035}
+  - {fileID: 512972597}
+  - {fileID: 764898956}
+  - {fileID: 1819762657}
+  - {fileID: 857561766}
+  - {fileID: 1802181520}
+  - {fileID: 911142398}
+  - {fileID: 1912972818}
+  waves:
+  - enemyPrefab: {fileID: 0}
+    spawnInterval: 3
+    maxEnemies: 5
+  - enemyPrefab: {fileID: 0}
+    spawnInterval: 3
+    maxEnemies: 10
+  timeBetweenWaves: 5
   waveBtn: {fileID: 2020514416}
+  currencyTxt: {fileID: 619831634}
+  waveLabel: {fileID: 1254640993}
+  healthLabel: {fileID: 1301428802}
 --- !u!4 &2095923707
 Transform:
   m_ObjectHideFlags: 0
@@ -2486,15 +2562,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 2095923705}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4f216fbc2f2dba4f8f188284fd7bf78, type: 3}
+  m_Script: {fileID: 11500000, guid: 7fb4b6f4254d9564a86780b3547ec589, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  goldLabel: {fileID: 619831634}
-  waveLabel: {fileID: 1254640993}
-  nextWaveLabels:
-  - {fileID: 107992, guid: c19cc29695d7dc040b7eb70d2d8ca8d3, type: 2}
-  - {fileID: 148246, guid: f4bed2b9c98243a47848a5967cbd2787, type: 2}
-  gameOver: 0
-  wave: 0
-  healthLabel: {fileID: 1301428802}
-  healthIndicator: []
+  objectPrefabs:
+  - {fileID: 160942, guid: 21b79345e640b8846994e806a9699db7, type: 2}
+  - {fileID: 190740, guid: b1658cfdc0079de44be290e2ff031282, type: 2}
+  - {fileID: 190740, guid: 7686d53d90ccdc7459aa9d887adb46b9, type: 2}
+  - {fileID: 190740, guid: eddb535b95738a84bb6bbc0803ee9a4b, type: 2}

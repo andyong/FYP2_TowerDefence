@@ -4,15 +4,16 @@ using System.Collections;
 public abstract class Debuff
 {
     protected MoveEnemy target;
+    protected float duration;
 
-    private float duration;
 
     private float elapsed;
 
     public Debuff(MoveEnemy target, float duration)
     {
         this.target = target;
-        this.duration = duration; 
+
+        this.duration = duration;
 
     }
 
@@ -28,7 +29,8 @@ public abstract class Debuff
 
     public virtual void Remove()
     {
-        if (target != null)
+
+        if(target != null)
         {
             target.RemoveDebuff(this);
         }

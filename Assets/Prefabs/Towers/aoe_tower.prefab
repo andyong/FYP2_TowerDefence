@@ -102,11 +102,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   bullet: {fileID: 155904, guid: 75c75bd3a99af9e4da1e2891d67b9687, type: 2}
+<<<<<<< HEAD
   debuffDuration: 5
+=======
+  debuffDuration: 1
+>>>>>>> e72c5f2b266d6474318e7f80e63733b709b24b48
   proc: 100
   damage: 10
   speed: 10
-  attackCooldown: 1
+  attackCooldown: 3
 --- !u!114 &11445758
 MonoBehaviour:
   m_ObjectHideFlags: 1

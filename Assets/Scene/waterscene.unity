@@ -257,6 +257,76 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1001 &257637295
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -0.5845506
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0.053939864
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 407654, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270562, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: f8e511579326cda4a82c217272052fc5, type: 3}
+    - target: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_Name
+      value: GameMusic
+      objectReference: {fileID: 0}
+    - target: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 11466362, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+  m_ParentPrefab: {fileID: 100100000, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+  m_IsPrefabParent: 0
+--- !u!1 &257637296 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+  m_PrefabInternal: {fileID: 257637295}
+--- !u!114 &257637297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 257637296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45f629545955cb846b3c2cc01329fe9c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &300776309 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 133078, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
@@ -885,7 +955,7 @@ GameObject:
   - 114: {fileID: 949917764}
   - 114: {fileID: 949917767}
   m_Layer: 5
-  m_Name: Aoe
+  m_Name: Lightning
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -980,7 +1050,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 8b5eaf8b74e98524e9fe1ea4e7ff68d0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a6ba528d20b1874c85369ff7724b2fa, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1005,8 +1075,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f3cdc5f021d8014182a165d5661e0fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 190102, guid: a7f74a1b0ee885e4ea3300f449cd4cdc, type: 2}
-  sprite: {fileID: 21300000, guid: 97a77921baa55094a8cb2a0698615807, type: 3}
+  towerPrefab: {fileID: 118698, guid: 0b30da351e1e67049b8752168ed4c3c4, type: 2}
+  sprite: {fileID: 21300000, guid: f9a4c579aaa4fad4d90b9c5e0a4bc81f, type: 3}
   price: 60
   priceText: {fileID: 1854768488}
 --- !u!4 &955385941 stripped

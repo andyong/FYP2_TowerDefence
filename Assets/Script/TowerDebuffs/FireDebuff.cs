@@ -5,7 +5,6 @@ public class FireDebuff : Debuff
 {
     //BulletBehaviour bullet;
     //public int damage = 1;
-
     private float tickTime;
 
     private float timeSinceTick;

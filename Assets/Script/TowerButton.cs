@@ -47,7 +47,7 @@ public class TowerButton : MonoBehaviour {
     private void CheckPrice()
     {
         //enough money
-        if(price <= UIManager.Instance.Gold)
+        if(price <= GameManager.Instance.Currency)
         {
             GetComponent<Image>().color = Color.white;
             priceText.color = Color.white;

@@ -42,7 +42,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.currency = value;
-            this.currencyTxt.text = value.ToString() + " <color=lime>$</color>";
+            this.currencyTxt.text = "GOLD: " + value.ToString();
         }
     }
 
@@ -97,7 +97,7 @@ public class GameManager : Singleton<GameManager>{
 
 	// Use this for initialization
 	void Start () {
-        Currency = 300;
+        Currency = 500;
         Wave = 0;
         Health = 5;
 	}
@@ -200,7 +200,7 @@ public class GameManager : Singleton<GameManager>{
     public void StartWave()
     {
         StartCoroutine(SpawnWave());
-
+        SpawnEnemy.Instance.startnewwave = true;
         waveBtn.SetActive(false);
     }
 
