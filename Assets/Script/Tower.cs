@@ -18,7 +18,7 @@ public abstract class Tower : MonoBehaviour {
     }
 
     [SerializeField]
-    private float debuffDuration;
+    private float debuffDuration;   
 
     public float DebuffDuration
     {
@@ -28,6 +28,11 @@ public abstract class Tower : MonoBehaviour {
 
     [SerializeField]
     private float proc;
+
+    public float Proc
+    {
+        get { return proc; }
+    }
 
     [SerializeField]
     private int damage;

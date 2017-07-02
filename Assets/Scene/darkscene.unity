@@ -2519,7 +2519,7 @@ MonoBehaviour:
   - {fileID: 2070353020}
   waves:
   - enemyPrefab: {fileID: 0}
-    spawnInterval: 1
+    spawnInterval: 3
     maxEnemies: 5
   - enemyPrefab: {fileID: 0}
     spawnInterval: 1

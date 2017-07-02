@@ -5,7 +5,7 @@ public class FrostDebuff : Debuff
 {
 
     public FrostDebuff(MoveEnemy target)
-        : base(target)
+        : base(target,1)
     {
         Debug.Log("FrostDebuff");
     }

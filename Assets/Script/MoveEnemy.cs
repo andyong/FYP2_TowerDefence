@@ -12,6 +12,10 @@ public class MoveEnemy : MonoBehaviour {
 
     private List<Debuff> debuffs = new List<Debuff>();
 
+    private List<Debuff> debuffsToRemove = new List<Debuff>();
+
+    private List<Debuff> newDebuffs = new List<Debuff>();
+
 	// Use this for initialization
 	void Start () {
         lastWaypointSwitchTime = Time.time;
@@ -100,20 +104,40 @@ public class MoveEnemy : MonoBehaviour {
     {
         if (!debuffs.Exists(x => x.GetType() == debuff.GetType()))
         {
+            Debug.Log("Apply");
             debuffs.Add(debuff);
         }
         
     }
 
+    public void RemoveDebuff(Debuff debuff)
+    {
+        debuffsToRemove.Add(debuff);
+    }
+
     private void HandleDebuffs()
     {
+        if (newDebuffs.Count > 0)
+        {
+            debuffs.AddRange(newDebuffs);
+
+            newDebuffs.Clear();
+        }
+
+        foreach (Debuff debuff in debuffsToRemove)
+        {
+            debuffs.Remove(debuff);
+        }
+
+        debuffsToRemove.Clear();
+
         foreach(Debuff debuff in debuffs)
         {
             debuff.Update();
         }
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
         Transform healthBarTransform = transform.FindChild("HealthBar");
         HealthBar healthBar = healthBarTransform.gameObject.GetComponent<HealthBar>();

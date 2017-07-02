@@ -50,6 +50,11 @@ public class BulletBehaviour : MonoBehaviour
 
     private void ApplyDebuff()
     {
-        target.AddDebuff(parent.GetDebuff());
+        float roll = Random.Range(0, 100);
+        //if(roll > parent.Proc)
+        {
+            target.AddDebuff(parent.GetDebuff());
+        }
+   
     }
 }

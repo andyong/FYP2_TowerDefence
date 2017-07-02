@@ -4,7 +4,7 @@ using System.Collections;
 public class AoeDebuff : Debuff
 {
     public AoeDebuff(MoveEnemy target)
-        : base(target)
+        : base(target,1)
     {
         Debug.Log("AoeDebuff");
     }
