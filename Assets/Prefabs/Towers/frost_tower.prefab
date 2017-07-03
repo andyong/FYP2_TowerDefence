@@ -104,9 +104,9 @@ MonoBehaviour:
   bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
   debuffDuration: 5
   proc: 100
-  damage: 0
+  damage: 10
   speed: 10
-  attackCooldown: 3
+  attackCooldown: 2
   slowingFactor: 50
 --- !u!114 &11430372
 MonoBehaviour:

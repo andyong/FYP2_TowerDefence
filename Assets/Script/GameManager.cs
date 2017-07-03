@@ -43,6 +43,7 @@ public class GameManager : Singleton<GameManager>{
         {
             this.currency = value;
             this.currencyTxt.text = "GOLD: " + value.ToString();
+            OnCurrencyChanged();
         }
     }
 
