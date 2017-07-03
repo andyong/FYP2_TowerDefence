@@ -279,7 +279,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 1
+  speed: 2
+  minimalDist: 0.1
 --- !u!212 &21200800
 SpriteRenderer:
   m_ObjectHideFlags: 1

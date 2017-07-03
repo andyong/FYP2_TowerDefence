@@ -723,7 +723,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 'GOLD: 1000'
+  m_Text: 'GOLD: 900'
 --- !u!222 &619831635
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2593,13 +2593,20 @@ MonoBehaviour:
   - {fileID: 2070353020}
   waves:
   - enemyPrefab: {fileID: 0}
-    spawnInterval: 3
-    maxEnemies: 1
-  - enemyPrefab: {fileID: 0}
     spawnInterval: 1
+    maxEnemies: 3
+  - enemyPrefab: {fileID: 0}
+    spawnInterval: 1.5
+    maxEnemies: 5
+  - enemyPrefab: {fileID: 0}
+    spawnInterval: 2
+    maxEnemies: 7
+  - enemyPrefab: {fileID: 0}
+    spawnInterval: 2
     maxEnemies: 10
   timeBetweenWaves: 5
   waveBtn: {fileID: 2020514416}
+  currency: 900
   currencyTxt: {fileID: 619831634}
   waveLabel: {fileID: 1254640993}
   healthLabel: {fileID: 1301428802}

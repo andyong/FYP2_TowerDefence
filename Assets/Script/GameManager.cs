@@ -34,6 +34,7 @@ public class GameManager : Singleton<GameManager>{
     public GameObject waveBtn;
 
     // currency
+    [SerializeField]
     private int currency;
 
     public int Currency
@@ -42,7 +43,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.currency = value;
-            this.currencyTxt.text = "GOLD: " + value.ToString();
+            this.currencyTxt.text = "GOLD: " + currency;
         }
     }
 
@@ -97,7 +98,7 @@ public class GameManager : Singleton<GameManager>{
 
 	// Use this for initialization
 	void Start () {
-        Currency = 500;
+        //Currency = 500;
         Wave = 0;
         Health = 5;
 	}
@@ -244,6 +245,8 @@ public class GameManager : Singleton<GameManager>{
                 GameObject newEnemy = waves[currentWave].enemyPrefab;
 
                 newEnemy.GetComponent<MoveEnemy>().waypoints = waypoints;
+
+                newEnemy.GetComponent<MoveEnemy>().Spawn();
 
                 enemiesSpawned++;
 

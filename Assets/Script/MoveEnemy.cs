@@ -11,6 +11,8 @@ public class MoveEnemy : MonoBehaviour {
 
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float minimalDist;
 
     public float Speed
     {
@@ -45,7 +47,8 @@ public class MoveEnemy : MonoBehaviour {
 
     public void Spawn()
     {
-        transform.position = new Vector3(-9.5f, 3.0f, 0);
+        Vector3 startPosition = waypoints[0].transform.position;
+        transform.position = startPosition;
     }
 
     private void Move()
@@ -53,25 +56,39 @@ public class MoveEnemy : MonoBehaviour {
         // 1 
         Vector3 startPosition = waypoints[currentWaypoint].transform.position;
         Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
+
+        Vector3 direction = Vector3.Normalize(endPosition - startPosition);
+
+        float distance = Vector3.Distance(gameObject.transform.position, endPosition);
+
+        Debug.Log(distance);
+
         // 2 
-        float pathLength = Vector3.Distance(startPosition, endPosition);
+        //float pathLength = Vector3.Distance(gameObject.transform.position, endPosition);
 
-        float totalTimeForPath = pathLength / speed;
+        //float totalTimeForPath = pathLength / speed;
 
-        float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
+        //float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
 
-        gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+        //gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
+
+        gameObject.transform.position = gameObject.transform.position + direction * (speed/60);
+
+        //Debug.Log(gameObject.transform.position);
+        //Debug.Log(endPosition);
 
         // 3 
-        if (gameObject.transform.position.Equals(endPosition)) // enemy reached next waypoint 
+        //if (gameObject.transform.position.Equals(endPosition)) // enemy reached next waypoint 
+        //if (gameObject.transform.position== endPosition)
+        if (distance <= minimalDist)
         {
+            Debug.Log("reached");
             if (currentWaypoint < waypoints.Length - 2)
             {
                 // 3.a 
                 currentWaypoint++;
                 lastWaypointSwitchTime = Time.time;
                 // TODO: Rotate into move direction
-
                 RotateIntoMoveDirection();
             }
             else

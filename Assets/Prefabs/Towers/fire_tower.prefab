@@ -118,7 +118,7 @@ MonoBehaviour:
   proc: 0
   damage: 30
   speed: 10
-  attackCooldown: 2
+  attackCooldown: 3.5
   tickTime: 1
   tickDamage: 5
 --- !u!212 &21216138

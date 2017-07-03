@@ -85,6 +85,7 @@ public abstract class Tower : MonoBehaviour {
             if (enemy != null)
             {
                 float distanceToGoal = enemy.GetComponent<MoveEnemy>().distanceToGoal();
+
                 if (distanceToGoal < minimalEnemyDistance)
                 {
                     target = enemy;
