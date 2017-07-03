@@ -658,7 +658,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1222016760
 RectTransform:
   m_ObjectHideFlags: 0
@@ -672,10 +672,10 @@ RectTransform:
   - {fileID: 1366472548}
   m_Father: {fileID: 1694273606}
   m_RootOrder: 6
-  m_AnchorMin: {x: 0.41500002, y: 0.4626995}
-  m_AnchorMax: {x: 0.58500004, y: 0.58769953}
-  m_AnchoredPosition: {x: -3.29e-13, y: -35.567}
-  m_SizeDelta: {x: 4, y: 3}
+  m_AnchorMin: {x: 0.36125, y: 0.07722006}
+  m_AnchorMax: {x: 0.6387501, y: 0.21240535}
+  m_AnchoredPosition: {x: 2, y: 3}
+  m_SizeDelta: {x: 6, y: -1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1222016761
 MonoBehaviour:
@@ -724,7 +724,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: help
+          m_StringArgument: towerhelp
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
@@ -895,7 +895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Help
+  m_Text: Tower help
 --- !u!222 &1366472550
 CanvasRenderer:
   m_ObjectHideFlags: 0

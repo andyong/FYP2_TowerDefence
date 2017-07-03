@@ -43,7 +43,8 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.currency = value;
-            this.currencyTxt.text = "GOLD: " + currency;
+            this.currencyTxt.text = "GOLD: " + value.ToString();
+            OnCurrencyChanged();
         }
     }
 
