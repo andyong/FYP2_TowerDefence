@@ -11,7 +11,7 @@ public abstract class Tower : MonoBehaviour {
     public GameObject bullet;
 
     protected MoveEnemy target;
-
+  
     public MoveEnemy Target
     {
         get { return target; }
@@ -76,6 +76,8 @@ public abstract class Tower : MonoBehaviour {
 
     private void Attack()
     {
+         MoveEnemy target = null;
+
         // 1
         float minimalEnemyDistance = float.MaxValue;
 
@@ -92,6 +94,9 @@ public abstract class Tower : MonoBehaviour {
                     minimalEnemyDistance = distanceToGoal;
                 }
             }
+            else
+
+                Debug.Log("NULL");
 
         }
         // 2

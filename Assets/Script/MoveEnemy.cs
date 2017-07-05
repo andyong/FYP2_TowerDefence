@@ -61,7 +61,7 @@ public class MoveEnemy : MonoBehaviour {
 
         float distance = Vector3.Distance(gameObject.transform.position, endPosition);
 
-        Debug.Log(distance);
+        //Debug.Log(distance);
 
         // 2 
         //float pathLength = Vector3.Distance(gameObject.transform.position, endPosition);
@@ -82,7 +82,7 @@ public class MoveEnemy : MonoBehaviour {
         //if (gameObject.transform.position== endPosition)
         if (distance <= minimalDist)
         {
-            Debug.Log("reached");
+            //Debug.Log("reached");
             if (currentWaypoint < waypoints.Length - 2)
             {
                 // 3.a 
