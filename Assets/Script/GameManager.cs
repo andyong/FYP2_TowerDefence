@@ -37,6 +37,22 @@ public class GameManager : Singleton<GameManager>{
     [SerializeField]
     private int currency;
 
+    [SerializeField]
+    private Text currencyTxt;
+    // currency
+
+    [SerializeField]
+    private GameObject statsPanel;
+
+    [SerializeField]
+    private Text statText;
+
+    // wave
+    public Text waveLabel;
+
+    // player health
+    public Text healthLabel;
+
     public int Currency
     {
         get { return currency; }
@@ -47,13 +63,6 @@ public class GameManager : Singleton<GameManager>{
             OnCurrencyChanged();
         }
     }
-
-    [SerializeField]
-    private Text currencyTxt;
-    // currecy
-
-    // wave
-    public Text waveLabel;
 
     private int wave;
 
@@ -68,9 +77,6 @@ public class GameManager : Singleton<GameManager>{
     }
     private int currentWave;
     // wave
-
-    // player health
-    public Text healthLabel;
 
     private int health;
     public int Health
@@ -176,6 +182,16 @@ public class GameManager : Singleton<GameManager>{
         {
             HoverIcon.Instance.Deactivate();
         }
+    }
+
+    public void ShowTowerStats()
+    {
+        statsPanel.SetActive(!statsPanel.activeSelf);
+    }
+
+    public void SetTooltipText(string text)
+    {
+        statText.text = text;
     }
 
     //public void StartWave()

@@ -85,6 +85,12 @@ NavMeshSettings:
     cellSize: 0.16666667
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &40803456 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 11455622, guid: 243d5844529920e43887e384540a5903,
+    type: 2}
+  m_PrefabInternal: {fileID: 310227349}
+  m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1 &44405299 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 115380, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
@@ -250,6 +256,7 @@ RectTransform:
   - {fileID: 619831633}
   - {fileID: 1301428801}
   - {fileID: 2020514417}
+  - {fileID: 310227350}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_AnchorMin: {x: 0, y: 0}
@@ -362,6 +369,93 @@ Prefab:
     - {fileID: 11466362, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &310227349
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 216325555}
+    m_Modifications:
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_RootOrder
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: 4.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: -1.2100067
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_SizeDelta.x
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_SizeDelta.y
+      value: -0.5299988
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0.27619675
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903, type: 2}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 243d5844529920e43887e384540a5903, type: 2}
+  m_IsPrefabParent: 0
+--- !u!224 &310227350 stripped
+RectTransform:
+  m_PrefabParentObject: {fileID: 22426708, guid: 243d5844529920e43887e384540a5903,
+    type: 2}
+  m_PrefabInternal: {fileID: 310227349}
 --- !u!1 &325251324
 GameObject:
   m_ObjectHideFlags: 0
@@ -563,7 +657,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -836,6 +930,10 @@ MonoBehaviour:
 GameObject:
   m_PrefabParentObject: {fileID: 182506, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
   m_PrefabInternal: {fileID: 221310059}
+--- !u!1 &799959588 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 187718, guid: 243d5844529920e43887e384540a5903, type: 2}
+  m_PrefabInternal: {fileID: 310227349}
 --- !u!1 &806492298
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,6 +946,7 @@ GameObject:
   - 114: {fileID: 806492301}
   - 114: {fileID: 806492300}
   - 114: {fileID: 806492303}
+  - 114: {fileID: 806492304}
   m_Layer: 5
   m_Name: Poison
   m_TagString: Untagged
@@ -973,6 +1072,53 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: a768fcb413b0aa448919a987675ff6c9, type: 3}
   price: 80
   priceText: {fileID: 2086455964}
+--- !u!114 &806492304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 806492298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 806492303}
+          m_MethodName: ShowInfo
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Poison
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2095923706}
+          m_MethodName: ShowTowerStats
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &865700009 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 106966, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
@@ -993,6 +1139,7 @@ GameObject:
   - 114: {fileID: 949917765}
   - 114: {fileID: 949917764}
   - 114: {fileID: 949917767}
+  - 114: {fileID: 949917768}
   m_Layer: 5
   m_Name: Lightning
   m_TagString: Untagged
@@ -1118,6 +1265,53 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: f9a4c579aaa4fad4d90b9c5e0a4bc81f, type: 3}
   price: 60
   priceText: {fileID: 1854768488}
+--- !u!114 &949917768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 949917762}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 949917767}
+          m_MethodName: ShowInfo
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Lightning
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2095923706}
+          m_MethodName: ShowTowerStats
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!4 &955385941 stripped
 Transform:
   m_PrefabParentObject: {fileID: 403806, guid: 5ee355ff8ac9a2a4986061c8f8a7399f, type: 2}
@@ -1168,7 +1362,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1429,6 +1623,7 @@ GameObject:
   - 114: {fileID: 1123696450}
   - 114: {fileID: 1123696449}
   - 114: {fileID: 1123696452}
+  - 114: {fileID: 1123696453}
   m_Layer: 5
   m_Name: Frost
   m_TagString: Untagged
@@ -1554,6 +1749,53 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 1cf7f95ec70e9dc49b51226e2b68bac4, type: 3}
   price: 100
   priceText: {fileID: 566200114}
+--- !u!114 &1123696453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1123696447}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1123696452}
+          m_MethodName: ShowInfo
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Frost
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2095923706}
+          m_MethodName: ShowTowerStats
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1162912697 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 106510, guid: 0aeb944bcc4381f489d7a2760d7aad40, type: 2}
@@ -2056,6 +2298,7 @@ GameObject:
   - 114: {fileID: 1759091565}
   - 114: {fileID: 1759091564}
   - 114: {fileID: 1759091567}
+  - 114: {fileID: 1759091568}
   m_Layer: 5
   m_Name: Fire
   m_TagString: Untagged
@@ -2181,6 +2424,53 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: ff4eebe7371952645acb407edcb21dc1, type: 3}
   price: 150
   priceText: {fileID: 990361052}
+--- !u!114 &1759091568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1759091562}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1862395651, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1759091567}
+          m_MethodName: ShowInfo
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Fire
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2095923706}
+          m_MethodName: ShowTowerStats
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!1 &1854768486
 GameObject:
   m_ObjectHideFlags: 0
@@ -2227,7 +2517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2523,7 +2813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2608,6 +2898,8 @@ MonoBehaviour:
   waveBtn: {fileID: 2020514416}
   currency: 900
   currencyTxt: {fileID: 619831634}
+  statsPanel: {fileID: 799959588}
+  statText: {fileID: 40803456}
   waveLabel: {fileID: 1254640993}
   healthLabel: {fileID: 1301428802}
 --- !u!4 &2095923707

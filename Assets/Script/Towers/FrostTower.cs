@@ -7,6 +7,14 @@ public class FrostTower : Tower
     [SerializeField]
     private float slowingFactor;
 
+    public float SlowingFactor
+    {
+        get 
+        { 
+            return slowingFactor; 
+        }
+    }
+
     private void Start()
     {
         ElementType = Element.FROST;
