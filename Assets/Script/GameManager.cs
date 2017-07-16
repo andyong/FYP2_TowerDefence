@@ -47,6 +47,12 @@ public class GameManager : Singleton<GameManager>{
     [SerializeField]
     private Text statText;
 
+    [SerializeField]
+    private GameObject upgradePanel;
+
+    [SerializeField]
+    private Text sellText;
+
     // wave
     public Text waveLabel;
 
@@ -165,6 +171,9 @@ public class GameManager : Singleton<GameManager>{
         }
         selectedTower = tower;
         selectedTower.Select();
+
+        sellText.text = "$" + (selectedTower.Price / 2).ToString();
+        upgradePanel.SetActive(true);
     }
 
     public void DeselectTower()
@@ -173,6 +182,7 @@ public class GameManager : Singleton<GameManager>{
         {
             selectedTower.Select();
         }
+        upgradePanel.SetActive(false);
         selectedTower = null;
     }
     //can't build towers etc
@@ -276,6 +286,20 @@ public class GameManager : Singleton<GameManager>{
 
         }
 
+    }
+
+    public void SellTower()
+    {
+        if(selectedTower != null)
+        {
+            Currency += selectedTower.Price / 2;
+
+            selectedTower.GetComponentInParent<TileScript>().IsEmpty = true;
+
+            Destroy(selectedTower.transform.parent.gameObject);
+
+            DeselectTower();
+        }
     }
 }
 

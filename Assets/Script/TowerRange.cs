@@ -8,7 +8,7 @@ public class TowerRange : MonoBehaviour
     private SpriteRenderer mySpriteRenderer;
 
     //private SpawnEnemy target;
-
+    public int Price { get; set; }
     
 
     // Use this for initialization
@@ -22,34 +22,6 @@ public class TowerRange : MonoBehaviour
     {
         //Debug.Log(target);
     }
-
-    //void OnEnemyDestroy(GameObject enemy)
-    //{
-    //    enemiesInRange.Remove(enemy);
-    //}
-
-    //void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    // 2
-    //    if (other.gameObject.tag.Equals("Enemy"))
-    //    {
-    //        enemiesInRange.Add(other.gameObject);
-    //        EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
-    //        if (del != null)
-    //            del.enemyDelegate += OnEnemyDestroy;
-    //    }
-    //}
-    //// 3
-    //void OnTriggerExit2D(Collider2D other)
-    //{
-    //    if (other.gameObject.tag.Equals("Enemy"))
-    //    {
-    //        enemiesInRange.Remove(other.gameObject);
-    //        EnemyDestructionDelegate del = other.gameObject.GetComponent<EnemyDestructionDelegate>();
-    //        if (del != null)
-    //            del.enemyDelegate -= OnEnemyDestroy;
-    //    }
-    //}
 
     public void Select()
     {

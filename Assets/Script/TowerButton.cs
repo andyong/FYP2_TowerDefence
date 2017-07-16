@@ -2,10 +2,10 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class TowerButton : MonoBehaviour {
+public class TowerButton : Singleton<TowerButton>{
 
     [SerializeField]
-    private GameObject towerPrefab;
+    public GameObject towerPrefab;
     [SerializeField]
     private Sprite sprite;
     [SerializeField]

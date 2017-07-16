@@ -115,9 +115,9 @@ MonoBehaviour:
   enemiesInRange: []
   bullet: {fileID: 149610, guid: b79a5d9d775d5fe4b9e32fa560267618, type: 2}
   debuffDuration: 5
-  proc: 0
-  damage: 30
-  speed: 10
+  proc: 100
+  damage: 20
+  speed: 8
   attackCooldown: 3.5
   tickTime: 1
   tickDamage: 5

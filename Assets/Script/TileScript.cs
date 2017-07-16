@@ -111,6 +111,8 @@ public class TileScript : MonoBehaviour {
 
         SetColorTile(Color.white);
 
+        myTower.Price = GameManager.Instance.ClickedButton.Price;
+
         GameManager.Instance.TowerBought();
 
         Debug.Log("placing a tower");
