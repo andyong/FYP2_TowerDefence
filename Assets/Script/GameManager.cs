@@ -182,17 +182,18 @@ public class GameManager : Singleton<GameManager>{
         {
             selectedTower.Select();
         }
-        upgradePanel.SetActive(false);
+
         selectedTower = null;
+        upgradePanel.SetActive(false);
     }
-    //can't build towers etc
-    private void HandleException()
-    {
-        if (Input.touchCount > 0)
-        {
-            HoverIcon.Instance.Deactivate();
-        }
-    }
+    ////can't build towers etc
+    //private void HandleException()
+    //{
+    //    if (Input.touchCount > 0)
+    //    {
+    //        HoverIcon.Instance.Deactivate();
+    //    }
+    //}
 
     public void ShowTowerStats()
     {
@@ -297,9 +298,13 @@ public class GameManager : Singleton<GameManager>{
             selectedTower.GetComponentInParent<TileScript>().IsEmpty = true;
 
             Destroy(selectedTower.transform.parent.gameObject);
-
+            
             DeselectTower();
         }
+        //else
+        //{
+            
+        //}
     }
 }
 
