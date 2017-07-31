@@ -11,6 +11,9 @@ public class LevelManager : Singleton<LevelManager>{
     private GameObject[] tilePrefabs;
 
     [SerializeField]
+    private CameraMovement cameraMovement;
+
+    [SerializeField]
     private Transform map;
 
     public Dictionary<Point, TileScript> Tiles { get; set; }
@@ -65,15 +68,19 @@ public class LevelManager : Singleton<LevelManager>{
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
 
+        Vector3 maxTile = Vector3.zero;
+
         Vector3 worldOrigin = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
         for(int y = 0; y < mapY; y++)
         {
             char[] newTiles = mapData[y].ToCharArray();
             for (int x = 0; x < mapX; x++)
             {
-                PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
+                maxTile =  PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
             }
         }
+
+        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize,maxTile.y - TileSize));
     }
 
     public void RemoveLevel1()
@@ -109,15 +116,20 @@ public class LevelManager : Singleton<LevelManager>{
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
 
+        Vector3 maxTile = Vector3.zero;
+
         Vector3 worldOrigin = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
         for (int y = 0; y < mapY; y++)
         {
             char[] newTiles = mapData[y].ToCharArray();
             for (int x = 0; x < mapX; x++)
             {
-                PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
+                maxTile = PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
             }
         }
+
+        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
+
     }
 
     public void CreateLevel3()
@@ -131,15 +143,19 @@ public class LevelManager : Singleton<LevelManager>{
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
 
+        Vector3 maxTile = Vector3.zero;
+
         Vector3 worldOrigin = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
         for (int y = 0; y < mapY; y++)
         {
             char[] newTiles = mapData[y].ToCharArray();
             for (int x = 0; x < mapX; x++)
             {
-                PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
+                maxTile = PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
             }
         }
+
+        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
     }
 
     public void CreateLevel4()
@@ -153,19 +169,23 @@ public class LevelManager : Singleton<LevelManager>{
         int mapX = mapData[0].ToCharArray().Length;
         int mapY = mapData.Length;
 
+        Vector3 maxTile = Vector3.zero;
+
         Vector3 worldOrigin = Camera.main.ScreenToWorldPoint(new Vector3(0, Screen.height));
         for (int y = 0; y < mapY; y++)
         {
             char[] newTiles = mapData[y].ToCharArray();
             for (int x = 0; x < mapX; x++)
             {
-                PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
+                maxTile = PlaceTile(newTiles[x].ToString(), x, y, worldOrigin);
             }
         }
+
+        cameraMovement.SetLimits(new Vector3(maxTile.x + TileSize, maxTile.y - TileSize));
     }
 
 
-    private void PlaceTile(string tileType, int x, int y, Vector3 worldStartPoint)
+    private Vector3 PlaceTile(string tileType, int x, int y, Vector3 worldStartPoint)
     {
         int tileIndex = int.Parse(tileType);
 
@@ -177,6 +197,8 @@ public class LevelManager : Singleton<LevelManager>{
         {
             newTile.IsEmpty = false;
         }
+
+        return newTile.transform.position;
         
     }
 

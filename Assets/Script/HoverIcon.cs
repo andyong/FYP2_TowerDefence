@@ -33,13 +33,14 @@ public class HoverIcon : Singleton<HoverIcon>{
         this.spriteRenderer.sprite = sprite;
         spriteRenderer.enabled = true;
 
-        //rangeSpriteRenderer.enabled = true;
+        rangeSpriteRenderer.enabled = true;
     }
 
     public void Deactivate()
     {
         spriteRenderer.enabled = false;
 
-        //rangeSpriteRenderer.enabled = false;
+
+        rangeSpriteRenderer.enabled = false;
     }
 }

@@ -28,7 +28,8 @@ GameObject:
   - 4: {fileID: 475062}
   - 212: {fileID: 21269618}
   - 58: {fileID: 5825804}
-  - 114: {fileID: 11467582}
+  - 114: {fileID: 11426198}
+  - 114: {fileID: 11410144}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -95,6 +96,38 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 118698}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da6c112c8980fe14281def25abbd8b62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  bullet: {fileID: 106708, guid: 24985f9f5e0b2714c9e42487517386b2, type: 2}
+  debuffDuration: 1
+  proc: 100
+  damage: 1
+  speed: 5
+  attackCooldown: 3
+--- !u!114 &11410144
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130854}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower_: {fileID: 0}
+  mySpriteRenderer: {fileID: 0}
+  <Price>k__BackingField: 0
+--- !u!114 &11426198
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 130854}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: da6c112c8980fe14281def25abbd8b62, type: 3}
@@ -104,21 +137,9 @@ MonoBehaviour:
   bullet: {fileID: 106708, guid: 24985f9f5e0b2714c9e42487517386b2, type: 2}
   debuffDuration: 1
   proc: 100
-  damage: 20
+  damage: 1
   speed: 5
   attackCooldown: 3
---- !u!114 &11467582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 130854}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesInRange: []
 --- !u!212 &21264752
 SpriteRenderer:
   m_ObjectHideFlags: 1

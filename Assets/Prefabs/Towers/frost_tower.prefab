@@ -10,7 +10,8 @@ GameObject:
   - 4: {fileID: 454890}
   - 212: {fileID: 21223322}
   - 58: {fileID: 5838064}
-  - 114: {fileID: 11430372}
+  - 114: {fileID: 11459620}
+  - 114: {fileID: 11444784}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -95,6 +96,39 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 179808}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bc1bb246f83ee4748a0874612c28b8b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
+  debuffDuration: 5
+  proc: 100
+  damage: 1
+  speed: 10
+  attackCooldown: 1
+  slowingFactor: 50
+--- !u!114 &11444784
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126342}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower_: {fileID: 0}
+  mySpriteRenderer: {fileID: 0}
+  <Price>k__BackingField: 0
+--- !u!114 &11459620
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 126342}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: bc1bb246f83ee4748a0874612c28b8b7, type: 3}
@@ -104,22 +138,10 @@ MonoBehaviour:
   bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
   debuffDuration: 5
   proc: 100
-  damage: 5
+  damage: 1
   speed: 10
   attackCooldown: 1
   slowingFactor: 50
---- !u!114 &11430372
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 126342}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesInRange: []
 --- !u!212 &21223322
 SpriteRenderer:
   m_ObjectHideFlags: 1

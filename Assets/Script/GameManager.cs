@@ -24,12 +24,12 @@ public class GameManager : Singleton<GameManager>{
     public WaveClass[] waves;
     public int timeBetweenWaves = 5;
 
-    private int enemiesSpawned = 0;
+    private int enemiesSpawned = 0; 
 
     public TowerButton ClickedButton { get; private set; }
 
     //current selected tower
-    private TowerRange selectedTower;
+    private Tower selectedTower;
     
     public GameObject waveBtn;
 
@@ -52,6 +52,9 @@ public class GameManager : Singleton<GameManager>{
 
     [SerializeField]
     private Text sellText;
+
+    [SerializeField]
+    private Text upgradePrice;
 
     // wave
     public Text waveLabel;
@@ -163,16 +166,16 @@ public class GameManager : Singleton<GameManager>{
         }
     }
 
-    public void SelectTower(TowerRange tower)
+    public void SelectTower(Tower tower)
     {
-        if(selectedTower != null)
+        if (selectedTower != null)
         {
             selectedTower.Select();
         }
         selectedTower = tower;
         selectedTower.Select();
 
-        sellText.text = "$" + (selectedTower.Price / 2).ToString();
+        sellText.text = "+ " + (selectedTower.Price / 2).ToString() + " $";
         upgradePanel.SetActive(true);
     }
 
@@ -198,11 +201,36 @@ public class GameManager : Singleton<GameManager>{
     public void ShowTowerStats()
     {
         statsPanel.SetActive(!statsPanel.activeSelf);
+        
+    }
+
+    public void ShowSelectedTowerStats()
+    {
+        statsPanel.SetActive(!statsPanel.activeSelf);  
+        UpdateUpgradeTip();
     }
 
     public void SetTooltipText(string text)
     {
         statText.text = text;
+    }
+
+    public void UpdateUpgradeTip()
+    {
+        if (selectedTower != null)
+        {
+            sellText.text = "+ " + (selectedTower.Price / 2).ToString() + " $";
+            SetTooltipText(selectedTower.GetStats());
+
+            if(selectedTower.NextUpgrade != null)
+            {
+                upgradePrice.text = selectedTower.NextUpgrade.Price.ToString() + " $";
+            }
+            else
+            {
+                upgradePrice.text = string.Empty;
+            }
+        }
     }
 
     //public void StartWave()
@@ -305,6 +333,17 @@ public class GameManager : Singleton<GameManager>{
         //{
             
         //}
+    }
+
+    public void UpgradeTower()
+    {
+        if(selectedTower !=null)
+        {
+            if(selectedTower.Level <= selectedTower.Upgrades.Length && Currency >= selectedTower.NextUpgrade.Price)
+            {
+                selectedTower.Upgrade();
+            }
+        }
     }
 }
 

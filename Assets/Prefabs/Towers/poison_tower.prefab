@@ -28,7 +28,8 @@ GameObject:
   - 4: {fileID: 404466}
   - 212: {fileID: 21205584}
   - 58: {fileID: 5895234}
-  - 114: {fileID: 11412832}
+  - 114: {fileID: 11403890}
+  - 114: {fileID: 11414900}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -89,7 +90,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &11412832
+--- !u!114 &11403890
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -97,17 +98,40 @@ MonoBehaviour:
   m_GameObject: {fileID: 176950}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
+  m_Script: {fileID: 11500000, guid: 273e3190e0f6d5541996fae76291584a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+  bullet: {fileID: 155410, guid: 54003da3f6f88d849a9f8ecb6112528b, type: 2}
+  debuffDuration: 3
+  proc: 100
+  damage: 5
+  speed: 10
+  attackCooldown: 1.5
+  tickTime: 3
+  splashPrefab: {fileID: 11478890, guid: 2a647c5019864c24abe6e6aea6c3dbb3, type: 2}
+  splashDamage: 10
+--- !u!114 &11414900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176950}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower_: {fileID: 0}
+  mySpriteRenderer: {fileID: 0}
+  <Price>k__BackingField: 0
 --- !u!114 &11443394
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151346}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 273e3190e0f6d5541996fae76291584a, type: 3}
   m_Name: 

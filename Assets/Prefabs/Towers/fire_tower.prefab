@@ -28,7 +28,8 @@ GameObject:
   - 4: {fileID: 481902}
   - 212: {fileID: 21216138}
   - 58: {fileID: 5818984}
-  - 114: {fileID: 11463794}
+  - 114: {fileID: 11430070}
+  - 114: {fileID: 11438692}
   m_Layer: 2
   m_Name: Range
   m_TagString: Untagged
@@ -89,24 +90,12 @@ CircleCollider2D:
   m_Offset: {x: 0.68266654, y: -0.5802667}
   serializedVersion: 2
   m_Radius: 1.5
---- !u!114 &11463794
+--- !u!114 &11430070
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 173216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  enemiesInRange: []
---- !u!114 &11481240
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 154326}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 62eb40a206cacf041ae5e45ebbf6ab22, type: 3}
@@ -116,9 +105,43 @@ MonoBehaviour:
   bullet: {fileID: 149610, guid: b79a5d9d775d5fe4b9e32fa560267618, type: 2}
   debuffDuration: 5
   proc: 100
-  damage: 20
+  damage: 100
   speed: 8
-  attackCooldown: 3.5
+  attackCooldown: 1
+  tickTime: 1
+  tickDamage: 5
+--- !u!114 &11438692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 173216}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b72980802ae53bb4a92ef37e226fe9a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tower_: {fileID: 0}
+  mySpriteRenderer: {fileID: 0}
+  <Price>k__BackingField: 0
+--- !u!114 &11481240
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 154326}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62eb40a206cacf041ae5e45ebbf6ab22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
+  bullet: {fileID: 149610, guid: b79a5d9d775d5fe4b9e32fa560267618, type: 2}
+  debuffDuration: 5
+  proc: 100
+  damage: 100
+  speed: 8
+  attackCooldown: 1
   tickTime: 1
   tickDamage: 5
 --- !u!212 &21216138

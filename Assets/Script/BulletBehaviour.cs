@@ -21,7 +21,7 @@ public class BulletBehaviour : MonoBehaviour
 
     public void Initialize(Tower parent)
     {
-        this.target = parent.Target;
+        //this.target = parent.Target;
         this.parent = parent;
     }
 

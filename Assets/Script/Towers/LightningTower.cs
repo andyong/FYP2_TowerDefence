@@ -8,6 +8,12 @@ public class LightningTower : Tower
     private void Start()
     {
         ElementType = Element.AOE;
+
+        Upgrades = new TowerUpgrade[]
+        {
+            new TowerUpgrade(2, 2, 1, 2),
+            new TowerUpgrade(5, 3, 1, 2),
+        };
     }
 
     public override Debuff GetDebuff()
@@ -15,4 +21,10 @@ public class LightningTower : Tower
         return new LightningDebuff(target, DebuffDuration);
         //return null;
     }
+
+    public override string GetStats()
+    {
+        return string.Format("<color=#add8e6ff>{0}</color>{1}", "<Size=20><b>Lightning Tower</b></size>", base.GetStats());
+    }
+
 }

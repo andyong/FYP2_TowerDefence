@@ -853,6 +853,8 @@ GameObject:
   - 124: {fileID: 630411428}
   - 81: {fileID: 630411427}
   - 114: {fileID: 630411432}
+  - 114: {fileID: 630411433}
+  - 114: {fileID: 630411434}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -936,6 +938,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a35fbfb8b9f4b5428d8cd1c7f461e76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &630411433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 630411426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e424b12540c00734e80e0c5b7acc13e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+--- !u!114 &630411434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 630411426}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f2e237dd72551f429d7625b63fe77f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &806492298
@@ -2008,6 +2033,10 @@ Prefab:
       propertyPath: map
       value: 
       objectReference: {fileID: 955385941}
+    - target: {fileID: 11488794, guid: 70e52043b1f97c948919d39e871a08bf, type: 2}
+      propertyPath: cameraMovement
+      value: 
+      objectReference: {fileID: 630411433}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 70e52043b1f97c948919d39e871a08bf, type: 2}
   m_IsPrefabParent: 0
@@ -2196,7 +2225,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11466362, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
@@ -3011,6 +3040,7 @@ MonoBehaviour:
   statText: {fileID: 2015569128}
   upgradePanel: {fileID: 527413232}
   sellText: {fileID: 527413231}
+  upgradePrice: {fileID: 0}
   waveLabel: {fileID: 1254640993}
   healthLabel: {fileID: 1301428802}
 --- !u!4 &2095923707

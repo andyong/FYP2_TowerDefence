@@ -17,10 +17,13 @@ public class FrostDebuff : Debuff
     {
         if(target != null)
         {
-            if(!applied)
+            if(!applied )
             {
                 applied = true;
-                target.Speed -= (target.MaxSpeed * slowingFactor) / 100;
+                if (target.Speed > 0)
+                    target.Speed -= (target.MaxSpeed * slowingFactor) / 100;
+                else
+                    target.Speed = 0;
             }
         }
         base.Update();
@@ -28,7 +31,10 @@ public class FrostDebuff : Debuff
 
     public override void Remove()
     {
-        target.Speed = target.MaxSpeed;
-        base.Remove();
+        if (target != null)
+        {
+            target.Speed = target.MaxSpeed;
+            base.Remove();
+        }
     }
 }

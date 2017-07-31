@@ -6,14 +6,12 @@ public enum Element {AOE, FIRE, FROST, POISON, NONE }
 
 public abstract class Tower : MonoBehaviour {
     public List<MoveEnemy> enemiesInRange;
+    private SpriteRenderer mySpriteRenderer;
 
     [SerializeField]
     public GameObject bullet;
 
     protected MoveEnemy target;
-
-    
-  
     public MoveEnemy Target
     {
         get { return target; }
@@ -52,6 +50,14 @@ public abstract class Tower : MonoBehaviour {
         get { return speed; }
     }
 
+    public int Level
+    {
+        get;
+        protected set;
+    }
+
+    public int Price { get; set; }
+
     //private Tower towerData;
 
     private bool canAttack = true;
@@ -63,11 +69,34 @@ public abstract class Tower : MonoBehaviour {
 
     public Element ElementType { get; protected set; }
 
+    public TowerUpgrade[] Upgrades { get; protected set; }
+
 	// Use this for initialization
 	void Start () {
         enemiesInRange = new List<MoveEnemy>();
+       
         //towerData = gameObject.GetComponentInChildren<Tower>();
 	}
+
+    void Awake()
+    {
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
+        Level = 1;
+    }
+
+    public TowerUpgrade NextUpgrade
+    {
+        get
+        {
+            if(Upgrades.Length > Level -1)
+            {
+                return Upgrades[Level - 1];
+            }
+
+            return null; 
+        }
+    }
+  
 	
 	// Update is called once per frame
 	void Update () {
@@ -76,9 +105,16 @@ public abstract class Tower : MonoBehaviour {
         Attack();
 	}
 
+    public void Select()
+    {
+       mySpriteRenderer.enabled = !mySpriteRenderer.enabled;
+       GameManager.Instance.UpdateUpgradeTip();
+    }
+
+
     private void Attack()
     {
-        //MoveEnemy target = null;
+        target = null;
 
         // 1
         float minimalEnemyDistance = float.MaxValue;
@@ -95,9 +131,9 @@ public abstract class Tower : MonoBehaviour {
                     target = enemy;
                     minimalEnemyDistance = distanceToGoal;
                 }
+               
             }
             else
-
                 Debug.Log("NULL");
 
         }
@@ -191,8 +227,32 @@ public abstract class Tower : MonoBehaviour {
         //audioSource.PlayOneShot(audioSource.clip);
     }
 
+    public virtual void Upgrade()
+    {
+        GameManager.Instance.Currency -= NextUpgrade.Price;
+        Price += NextUpgrade.Price;
+        this.damage += NextUpgrade.Damage;
+        this.proc += NextUpgrade.ProcChance;
+        this.DebuffDuration += NextUpgrade.DebuffDuration;
+        Level++;
+        GameManager.Instance.UpdateUpgradeTip();
+    }
+
     public void ReleaseObject(GameObject gameobject)
     {
         gameobject.SetActive(false);
     }
+
+    public virtual string GetStats()
+    {
+
+        if(NextUpgrade!=null)
+        {
+            return string.Format("\nLevel: {0} \nDamage: {1} <color=#00ff00ff> +{4}</color>\nProc: {2}% <color=#00ff00ff> +{5}%</color>\nDebuff: {3}sec <color=#00ff00ff> + {6}</color>",
+                Level, damage, proc, DebuffDuration,NextUpgrade.Damage,NextUpgrade.ProcChance,NextUpgrade.DebuffDuration);
+        } 
+        return string.Format("\nLevel: {0} \nDamage: {1} \nProc {2}% \nDebuff: {3}sec", Level, Damage, Proc, DebuffDuration);
+    }
+
+   
 }

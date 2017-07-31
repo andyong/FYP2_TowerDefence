@@ -15,7 +15,7 @@ public class TileScript : MonoBehaviour {
     //check if tile is available
     public bool IsEmpty { get; set; }
 
-    private TowerRange myTower;
+    private Tower myTower;
 
     //private UIManager uiManager;
 
@@ -105,17 +105,16 @@ public class TileScript : MonoBehaviour {
 
         tower.transform.SetParent(transform);
 
-        this.myTower = tower.transform.GetChild(0).GetComponent<TowerRange>();
+        this.myTower = tower.transform.GetChild(0).GetComponent<Tower>();
 
         IsEmpty = false;
 
         SetColorTile(Color.white);
-
+         
         myTower.Price = GameManager.Instance.ClickedButton.Price;
 
         GameManager.Instance.TowerBought();
 
-        Debug.Log("placing a tower");
     }
 
     private void SetColorTile(Color newColor)
