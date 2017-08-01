@@ -27,8 +27,8 @@ public class FireTower : Tower
     
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2, 2, .5f, 5, -0.1f, 1),
-            new TowerUpgrade(5, 3, .5f, 5, -0.1f, 1),
+            new TowerUpgrade(75, 10, .5f, 10, -0.1f, 1),
+            new TowerUpgrade(125, 20, .5f, 15, -0.1f, 1),
         };
     }
 
