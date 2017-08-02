@@ -11,6 +11,8 @@ public class MoveEnemy : MonoBehaviour {
 
     [SerializeField]
     private float speed;
+
+    
     [SerializeField]
     private float minimalDist;
 
@@ -95,7 +97,7 @@ public class MoveEnemy : MonoBehaviour {
             {
                 // 3.b 
                 Destroy(gameObject);
-
+                //GameManager.Instance.enemyList.Remove(gameObject);
                 //AudioSource audioSource = gameObject.GetComponent<AudioSource>();
                 //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                 // TODO: deduct health
@@ -181,6 +183,7 @@ public class MoveEnemy : MonoBehaviour {
         if (healthBar.currentHealth <= 0)
         {
             Destroy(gameObject);
+            //GameManager.Instance.enemyList.Remove(gameObject);
             //AudioSource audioSource = target.GetComponent<AudioSource>();
             //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
             GameManager.Instance.Currency += 50;

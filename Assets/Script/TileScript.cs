@@ -115,6 +115,18 @@ public class TileScript : MonoBehaviour {
 
         GameManager.Instance.TowerBought();
 
+        if (LevelManager.Instance.darkscene)
+        {
+            Debug.Log("-Damage");
+            myTower.Damage -= myTower.Damage / 2;
+        }
+
+        else if(LevelManager.Instance.waterscene)
+        {
+            Debug.Log("+attackCooldown");
+            myTower.AttackCooldown += myTower.AttackCooldown * 0.3f;
+        }
+
     }
 
     private void SetColorTile(Color newColor)

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections.Generic;
 
 [System.Serializable]
 public class WaveClass
@@ -18,13 +19,21 @@ public class GameManager : Singleton<GameManager>{
 
     public event CurrencyChanged Changed;
 
+    private HealthBar[] enemyHealth;
+
+    public List<GameObject> enemyList;
+
     public GameObject[] waypoints;
     //public GameObject testEnemyPrefab;
 
     public WaveClass[] waves;
     public int timeBetweenWaves = 5;
 
-    private int enemiesSpawned = 0; 
+    public int enemiesSpawned
+    {
+        get;
+        set;
+    }
 
     public TowerButton ClickedButton { get; private set; }
 
@@ -59,6 +68,8 @@ public class GameManager : Singleton<GameManager>{
     // wave
     public Text waveLabel;
 
+    int index_ = 0;
+
     // player health
     public Text healthLabel;
 
@@ -68,7 +79,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.currency = value;
-            this.currencyTxt.text = "GOLD: " + value.ToString();
+            this.currencyTxt.text =value.ToString();
             OnCurrencyChanged();
         }
     }
@@ -81,7 +92,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.wave = value;
-            this.waveLabel.text = "WAVE: " + (wave + 1);
+            this.waveLabel.text =(wave + 1) + "/" + waves.Length;
         }
     }
     private int currentWave;
@@ -94,7 +105,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             health = value;
-            healthLabel.text = "HEALTH: " + health;
+            healthLabel.text = " " + health;
             if (health <= 0)
             {
                 SceneManager.LoadScene("lose");
@@ -117,6 +128,7 @@ public class GameManager : Singleton<GameManager>{
         //Currency = 500;
         Wave = 0;
         Health = 5;
+        enemyList = new List<GameObject>();
 	}
 	
 	// Update is called once per frame
@@ -124,6 +136,8 @@ public class GameManager : Singleton<GameManager>{
         //HandleException();
         CheckBtnActive();
         CheckVictory();
+
+      
 	}
 
     private void CheckVictory()
@@ -306,6 +320,18 @@ public class GameManager : Singleton<GameManager>{
 
                 enemiesSpawned++;
 
+                enemyList.Add(newEnemy);
+
+                //index_ = enemyList.IndexOf(newEnemy);
+
+                levelEffect(i);
+
+                //GameObject healthBar = waves[currentWave].enemyPrefab;
+                //enemyHealth[i] = healthBar.gameObject.GetComponent<HealthBar>();
+                //enemyHealth[i].maxHealth += 50;
+                //enemyHealth[i].currentHealth += 50;
+
+
                 //MoveEnemy monster = Pool.GetObject(type).GetComponent<MoveEnemy>();
                 //monster.waypoints = waypoints;
                 //monster.Spawn();
@@ -313,6 +339,7 @@ public class GameManager : Singleton<GameManager>{
 
             }
 
+            enemyList.Clear();
         }
 
     }
@@ -344,6 +371,31 @@ public class GameManager : Singleton<GameManager>{
                 selectedTower.Upgrade();
             }
         }
+    }
+
+    private void levelEffect(int i)
+    {
+
+        if (LevelManager.Instance.firescene)
+        {
+            Debug.Log("+enemyHP");
+            GameObject o = enemyList[i];
+            Transform temp = o.transform.FindChild("HealthBar");
+            HealthBar health_bar = temp.gameObject.GetComponent<HealthBar>();
+            health_bar.maxHealth += health_bar.maxHealth * 0.5f;
+            health_bar.currentHealth += health_bar.currentHealth * 0.5f;
+          
+        }
+
+        else if (LevelManager.Instance.windscene)
+        {
+            Debug.Log("+enemySpeed");
+            Debug.Log(i);
+            GameObject o = enemyList[i];
+            MoveEnemy enemies = o.GetComponent<MoveEnemy>();
+            enemies.Speed += enemies.Speed * 0.3f;
+        }
+
     }
 }
 

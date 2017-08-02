@@ -40,6 +40,7 @@ public abstract class Tower : MonoBehaviour {
     public int Damage
     {
         get { return damage; }
+        set { this.damage=value;}
     }
 
     [SerializeField]
@@ -66,6 +67,12 @@ public abstract class Tower : MonoBehaviour {
 
     [SerializeField]
     private float attackCooldown;
+
+    public float AttackCooldown
+    {
+        get {return attackCooldown ;}
+        set {this.attackCooldown = value ;}
+    }
 
     public Element ElementType { get; protected set; }
 
@@ -199,7 +206,7 @@ public abstract class Tower : MonoBehaviour {
         Vector3 offset = new Vector3(0.70f, -0.70f, 0.0f);
         GameObject bulletPrefab = bullet;
         // 1 
-        Vector3 startPosition = gameObject.transform.position + offset;
+        Vector3 startPosition = gameObject.transform.position ;
         Vector3 targetPosition = target.transform.position;
         startPosition.z = bulletPrefab.transform.position.z;
         targetPosition.z = bulletPrefab.transform.position.z;

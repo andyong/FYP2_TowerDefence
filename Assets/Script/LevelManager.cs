@@ -16,6 +16,33 @@ public class LevelManager : Singleton<LevelManager>{
     [SerializeField]
     private Transform map;
 
+    [SerializeField]
+    private HealthBar health_;
+
+    public bool firescene
+    {
+        get;
+        set;
+    }
+
+    public bool darkscene
+    {
+        get;
+        set;
+    }
+
+    public bool windscene
+    {
+        get;
+        set;
+    }
+
+    public bool waterscene
+    {
+        get;
+        set;
+    }
+
     public Dictionary<Point, TileScript> Tiles { get; set; }
     public float TileSize
 
@@ -24,32 +51,53 @@ public class LevelManager : Singleton<LevelManager>{
     }
 
 	// Use this for initialization
+
+
 	void Start () 
     {
+        
         Scene currentScene = SceneManager.GetActiveScene();
         string sceneName = currentScene.name;
 
         if (sceneName == "firescene")
         {
+            firescene = true;
+            darkscene = false;
+            waterscene = false;
+            windscene = false;
             CreateLevel();
         }
         else if (sceneName == "darkscene")
         {
+            darkscene = true;
+            firescene = false;
+            waterscene = false;
+            windscene = false;
             CreateLevel2();
         }
         else if (sceneName == "waterscene")
         {
+            waterscene = true;
+            firescene = false;
+            darkscene = false;
+            windscene = false;
             CreateLevel3();
         }
         else if (sceneName == "windscene")
         {
+            windscene = true;
+            firescene = false;
+            darkscene = false;
+            waterscene = false;
             CreateLevel4();
         }
 	}
 	
 	// Update is called once per frame
-	void Update () {
-	}
+    void Update()
+    {
+
+    }
 
     private void TestDictionary()
     {
@@ -195,7 +243,7 @@ public class LevelManager : Singleton<LevelManager>{
         newTile.Setup(new Point(x, y), new Vector3(worldStartPoint.x + (TileSize * x), worldStartPoint.y - (TileSize * y), 0), map);
         if (tileType == "1" || tileType == "3" || tileType == "5" || tileType == "6" || tileType == "8")
         {
-            newTile.IsEmpty = false;
+            newTile.IsEmpty = true;
         }
 
         return newTile.transform.position;
