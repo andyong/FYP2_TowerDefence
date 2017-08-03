@@ -233,7 +233,7 @@ public class GameManager : Singleton<GameManager>{
                 tooltip = string.Format("<color=#F62817><size=12><b>Fire:</b> Enemies have extra 50% health</size></color>");
                 break;
             case "Water":
-                tooltip = string.Format("<color=#2B60DE><size=12><b>Water:</b> Towers have 1.5 secs increased cooldown</size></color>");
+                tooltip = string.Format("<color=#4EE2EC><size=12><b>Water:</b> Towers have 1.5 secs increased cooldown</size></color>");
                 break;
             case "Dark":
                 tooltip = string.Format("<color=#D462FF><size=12><b>Dark:</b> Towers have 30% decreased damage</size></color>");

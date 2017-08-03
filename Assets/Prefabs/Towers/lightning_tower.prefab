@@ -135,7 +135,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemiesInRange: []
   bullet: {fileID: 106708, guid: 24985f9f5e0b2714c9e42487517386b2, type: 2}
-  debuffDuration: 1
+  debuffDuration: 0.5
   proc: 70
   damage: 20
   speed: 7

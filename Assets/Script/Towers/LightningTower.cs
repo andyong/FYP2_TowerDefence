@@ -11,8 +11,8 @@ public class LightningTower : Tower
 
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(50, 5, 1, 5),
-            new TowerUpgrade(100, 10, 1, 10),
+            new TowerUpgrade(50, 5, 0.5f, 5),
+            new TowerUpgrade(100, 10, 0.5f, 10),
         };
     }
 
