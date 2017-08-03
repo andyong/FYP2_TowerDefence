@@ -57,6 +57,12 @@ public class GameManager : Singleton<GameManager>{
     private Text statText;
 
     [SerializeField]
+    private GameObject effectsPanel; //lvl effect
+
+    [SerializeField]
+    private Text effectText;
+
+    [SerializeField]
     private GameObject upgradePanel;
 
     [SerializeField]
@@ -212,10 +218,38 @@ public class GameManager : Singleton<GameManager>{
     //    }
     //}
 
+    public void ShowLvlEffect()
+    {
+        effectsPanel.SetActive(!effectsPanel.activeSelf);
+    }
+
+    public void ShowLvlInfo(string lvleffect)
+    {
+        string tooltip = string.Empty;
+
+        switch(lvleffect)
+        {
+            case "Fire":
+                tooltip = string.Format("<color=#F62817><size=12><b>Fire:</b> Enemies have extra 50% health</size></color>");
+                break;
+            case "Water":
+                tooltip = string.Format("<color=#2B60DE><size=12><b>Water:</b> Towers have 1.5 secs increased cooldown</size></color>");
+                break;
+            case "Dark":
+                tooltip = string.Format("<color=#D462FF><size=12><b>Dark:</b> Towers have 30% decreased damage</size></color>");
+                break;
+            case "Wind":
+                tooltip = string.Format("<color=#E0FFFF><size=12><b>Wind:</b> Enemies have 30% increased \nmovement speed</size></color>");
+                break;
+
+        }
+        SetEffectTooltipText(tooltip);
+        ShowLvlEffect();
+    }
+
     public void ShowTowerStats()
     {
         statsPanel.SetActive(!statsPanel.activeSelf);
-        
     }
 
     public void ShowSelectedTowerStats()
@@ -227,6 +261,11 @@ public class GameManager : Singleton<GameManager>{
     public void SetTooltipText(string text)
     {
         statText.text = text;
+    }
+
+    public void SetEffectTooltipText(string text)
+    {
+        effectText.text = text;
     }
 
     public void UpdateUpgradeTip()
