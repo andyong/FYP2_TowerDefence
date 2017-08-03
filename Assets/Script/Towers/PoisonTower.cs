@@ -30,8 +30,8 @@ public class PoisonTower : Tower
 
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2, 1, .5f, 5, -0.1f, 1),
-            new TowerUpgrade(5, 1, .5f, 5, -0.1f, 1),
+            new TowerUpgrade(25, 4, .5f, 5, -0.1f, 1),
+            new TowerUpgrade(50, 8, .5f, 5, -0.1f, 1),
         };
     }
 

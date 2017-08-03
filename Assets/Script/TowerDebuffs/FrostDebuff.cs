@@ -19,6 +19,7 @@ public class FrostDebuff : Debuff
         {
             if(!applied )
             {
+                
                 applied = true;
                 if (target.Speed > 0)
                     target.Speed -= (target.MaxSpeed * slowingFactor) / 100;

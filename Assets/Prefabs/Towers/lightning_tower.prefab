@@ -104,10 +104,10 @@ MonoBehaviour:
   enemiesInRange: []
   bullet: {fileID: 106708, guid: 24985f9f5e0b2714c9e42487517386b2, type: 2}
   debuffDuration: 1
-  proc: 100
-  damage: 1
-  speed: 5
-  attackCooldown: 3
+  proc: 70
+  damage: 20
+  speed: 7
+  attackCooldown: 2
 --- !u!114 &11410144
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -136,10 +136,10 @@ MonoBehaviour:
   enemiesInRange: []
   bullet: {fileID: 106708, guid: 24985f9f5e0b2714c9e42487517386b2, type: 2}
   debuffDuration: 1
-  proc: 100
-  damage: 1
-  speed: 5
-  attackCooldown: 3
+  proc: 70
+  damage: 20
+  speed: 7
+  attackCooldown: 2
 --- !u!212 &21264752
 SpriteRenderer:
   m_ObjectHideFlags: 1

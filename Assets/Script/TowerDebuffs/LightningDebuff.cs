@@ -9,6 +9,7 @@ public class LightningDebuff : Debuff
     {
         if(target != null)
         {
+            SoundManager.Instance.PlaySFX("shock");
             target.Speed = 0;
         }
     }

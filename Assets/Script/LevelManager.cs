@@ -243,7 +243,7 @@ public class LevelManager : Singleton<LevelManager>{
         newTile.Setup(new Point(x, y), new Vector3(worldStartPoint.x + (TileSize * x), worldStartPoint.y - (TileSize * y), 0), map);
         if (tileType == "1" || tileType == "3" || tileType == "5" || tileType == "6" || tileType == "8")
         {
-            newTile.IsEmpty = true;
+            newTile.IsEmpty = false;
         }
 
         return newTile.transform.position;

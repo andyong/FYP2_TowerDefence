@@ -1057,6 +1057,48 @@ MonoBehaviour:
   zoomSpeed: 0.1
   zoomIn: 0
   zoomOut: 0
+--- !u!1001 &637247555
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 284.36328
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 176.92249
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 469384, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+      propertyPath: m_RootOrder
+      value: 13
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 79bfae369c5c4ca4a9cd263847454b7a, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &806492298
 GameObject:
   m_ObjectHideFlags: 0
@@ -2497,14 +2539,22 @@ Prefab:
     - target: {fileID: 8270562, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
       propertyPath: m_audioClip
       value: 
-      objectReference: {fileID: 8300000, guid: f8e511579326cda4a82c217272052fc5, type: 3}
+      objectReference: {fileID: 8300000, guid: 6176f1bd097a2da40b86b1e2de28710f, type: 3}
     - target: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
       propertyPath: m_Name
       value: GameMusic
       objectReference: {fileID: 0}
     - target: {fileID: 184252, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270562, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8270562, guid: e690301bc9577434a8be8ed0a1437272, type: 2}
+      propertyPath: m_Volume
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 11466362, guid: e690301bc9577434a8be8ed0a1437272, type: 2}

@@ -21,8 +21,8 @@ public class FrostTower : Tower
 
         Upgrades = new TowerUpgrade[]
         {
-            new TowerUpgrade(2, 1, 1, 2, 10),
-            new TowerUpgrade(2, 1, 1, 2, 20),
+            new TowerUpgrade(40, 5, 1, 4, 10),
+            new TowerUpgrade(80, 10, 1, 8, 20),
         };
     }
 

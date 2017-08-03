@@ -97,6 +97,8 @@ public class MoveEnemy : MonoBehaviour {
             {
                 // 3.b 
                 Destroy(gameObject);
+                Handheld.Vibrate();
+
                 //GameManager.Instance.enemyList.Remove(gameObject);
                 //AudioSource audioSource = gameObject.GetComponent<AudioSource>();
                 //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
@@ -187,6 +189,8 @@ public class MoveEnemy : MonoBehaviour {
             //AudioSource audioSource = target.GetComponent<AudioSource>();
             //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
             GameManager.Instance.Currency += 50;
+            SoundManager.Instance.PlaySFX("coins");
+            //SoundManager.Instance.PlaySFX("kill sound");
         }
     }
 }

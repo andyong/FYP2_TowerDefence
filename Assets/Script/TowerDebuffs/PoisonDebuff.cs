@@ -38,6 +38,8 @@ public class PoisonDebuff : Debuff
 
     private void Splash()
     {
+        SoundManager.Instance.PlaySFX("splat");
+
         PoisonSplash tmp = (PoisonSplash)GameObject.Instantiate(splashPrefab, target.transform.position, Quaternion.identity);
 
         tmp.Damage = splashDamage;
