@@ -4,8 +4,14 @@ using System.Collections;
 public abstract class Debuff
 {
     protected MoveEnemy target;
+
     protected float duration;
 
+    public float Duration_
+    {
+        get { return duration; }
+        set { this.duration = value; }
+    }
 
     private float elapsed;
 
@@ -21,10 +27,12 @@ public abstract class Debuff
     {
         elapsed += Time.deltaTime;
 
-        if(elapsed >= duration)
+        if (elapsed >= duration)
         {
+           
             Remove();
         }
+
     }
 
     public virtual void Remove()

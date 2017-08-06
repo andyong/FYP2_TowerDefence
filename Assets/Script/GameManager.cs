@@ -29,6 +29,20 @@ public class GameManager : Singleton<GameManager>{
     public WaveClass[] waves;
     public int timeBetweenWaves = 5;
 
+    [SerializeField]
+    private GameObject startTile;
+
+    [SerializeField]
+    private GameObject endTile;
+
+    [SerializeField]
+    private GameObject startWaypoint;
+
+    [SerializeField]
+    private GameObject endWaypoint;
+
+    private bool isScale = false;
+
     public int enemiesSpawned
     {
         get;
@@ -71,6 +85,8 @@ public class GameManager : Singleton<GameManager>{
     [SerializeField]
     private Text upgradePrice;
 
+    [SerializeField]
+    private Image pausedImage;
     // wave
     public Text waveLabel;
 
@@ -98,7 +114,7 @@ public class GameManager : Singleton<GameManager>{
         set
         {
             this.wave = value;
-            this.waveLabel.text =(wave + 1) + "/" + waves.Length;
+            this.waveLabel.text =(wave) + "/" + waves.Length;
         }
     }
     private int currentWave;
@@ -120,6 +136,13 @@ public class GameManager : Singleton<GameManager>{
         }
     }
 
+    private bool paused;
+
+    public bool Paused
+    {
+        get { return paused; }
+    }
+
 
     // objectpool
     public ObjectPool Pool { get; set; }
@@ -133,8 +156,12 @@ public class GameManager : Singleton<GameManager>{
 	void Start () {
         //Currency = 500;
         Wave = 0;
-        Health = 5;
+        Health = 15;
         enemyList = new List<GameObject>();
+
+        startTile.transform.position = startWaypoint.transform.position;
+        endTile.transform.position = endWaypoint.transform.position;
+
 	}
 	
 	// Update is called once per frame
@@ -142,13 +169,13 @@ public class GameManager : Singleton<GameManager>{
         //HandleException();
         CheckBtnActive();
         CheckVictory();
-
-      
+        waveBtnScale();
+       
 	}
 
     private void CheckVictory()
     {
-        if (Wave >= waves.Length)
+        if (Wave == waves.Length && GameObject.FindGameObjectWithTag("Enemy")==null)
         {
             SceneManager.LoadScene("win");
         }
@@ -157,15 +184,14 @@ public class GameManager : Singleton<GameManager>{
 
     public void PickTower(TowerButton towerButton)
     {
-        if (Currency >= towerButton.Price)
-        {
-            // stores the clicked button
-            this.ClickedButton = towerButton;
+       if (Currency >= towerButton.Price)
+       {
+           // stores the clicked button 
+           this.ClickedButton = towerButton;
 
-            // Activates the hover icon
-            HoverIcon.Instance.Activate(towerButton.Sprite);
-        }
-       
+           // Activates the hover icon
+           HoverIcon.Instance.Activate(towerButton.Sprite);
+       }
     }
 
     public void TowerBought()
@@ -230,13 +256,13 @@ public class GameManager : Singleton<GameManager>{
         switch(lvleffect)
         {
             case "Fire":
-                tooltip = string.Format("<color=#F62817><size=12><b>Fire:</b> Enemies have extra 50% health</size></color>");
+                tooltip = string.Format("<color=#E0FFFF><size=12><b>Fire:</b> Enemies have extra 50% health</size></color>");
                 break;
             case "Water":
-                tooltip = string.Format("<color=#4EE2EC><size=12><b>Water:</b> Towers have 1.5 secs increased cooldown</size></color>");
+                tooltip = string.Format("<color=#E0FFFF><size=12><b>Water:</b> Towers have 1.5 secs increased cooldown</size></color>");
                 break;
             case "Dark":
-                tooltip = string.Format("<color=#D462FF><size=12><b>Dark:</b> Towers have 30% decreased damage</size></color>");
+                tooltip = string.Format("<color=#E0FFFF><size=12><b>Dark:</b> Towers have 30% decreased damage</size></color>");
                 break;
             case "Wind":
                 tooltip = string.Format("<color=#E0FFFF><size=12><b>Wind:</b> Enemies have 30% increased \nmovement speed</size></color>");
@@ -296,14 +322,36 @@ public class GameManager : Singleton<GameManager>{
 
     private void CheckBtnActive()
     {
-        if (enemiesSpawned == waves[currentWave].maxEnemies &&
-                GameObject.FindGameObjectWithTag("Enemy") == null)
+        if (enemiesSpawned == waves[currentWave].maxEnemies)
         {
-            Wave++;
-            Currency = Mathf.RoundToInt(Currency * 1.5f);
             enemiesSpawned = 0;
             waveBtn.SetActive(true);
         }
+    }
+
+    private void waveBtnScale()
+    {
+        if(!isScale)
+        {
+            if (waveBtn.transform.localScale.x <= 0.4 && waveBtn.transform.localScale.y <= 0.8 && waveBtn.transform.localScale.z <= 0.4)
+            {
+                isScale = true;
+            }
+            else
+                waveBtn.transform.localScale = waveBtn.transform.localScale - new Vector3(Time.deltaTime, Time.deltaTime, Time.deltaTime);
+
+        }
+       
+        if(isScale)
+        {
+            if (waveBtn.transform.localScale.x >=0.5 && waveBtn.transform.localScale.y >= 1.0 && waveBtn.transform.localScale.z >= 0.5)
+            {
+                isScale = false;
+            }
+            else
+                waveBtn.transform.localScale = waveBtn.transform.localScale + new Vector3(Time.deltaTime, Time.deltaTime, Time.deltaTime);
+        }
+
     }
 
 
@@ -312,14 +360,24 @@ public class GameManager : Singleton<GameManager>{
         StartCoroutine(SpawnWave());
         SpawnEnemy.Instance.startnewwave = true;
         waveBtn.SetActive(false);
+        int _random = (int)Random.Range(80, 150);
+        Wave++;
+        if (Wave != 1)
+        {
+            Currency += _random;
+
+
+        }
+            
     }
 
     private IEnumerator SpawnWave()
     {
 
         currentWave = Wave;
+        Debug.Log(currentWave);
 
-        if (currentWave < waves.Length)
+        if (currentWave < waves.Length - 1)
         {
 
             float spawnInterval = waves[currentWave].spawnInterval;
@@ -361,6 +419,15 @@ public class GameManager : Singleton<GameManager>{
 
                 enemyList.Add(newEnemy);
 
+                // increase enemy health when wave increased
+                if (currentWave + 1 > 1)
+                {
+                    Transform temp = newEnemy.transform.FindChild("HealthBar");
+                    HealthBar health_bar = temp.gameObject.GetComponent<HealthBar>();
+                    health_bar.maxHealth += health_bar.maxHealth * (currentWave + 1) * 0.2f;
+                    health_bar.currentHealth += health_bar.currentHealth * (currentWave + 1) * 0.2f;
+                }
+
                 //index_ = enemyList.IndexOf(newEnemy);
 
                 levelEffect(i);
@@ -379,6 +446,15 @@ public class GameManager : Singleton<GameManager>{
             }
 
             enemyList.Clear();
+        }
+
+        else if(currentWave == waves.Length-1)
+        {
+            GameObject boss = Instantiate(waves[currentWave].enemyPrefab);
+            boss.GetComponent<MoveEnemy>().waypoints = waypoints;
+            boss.GetComponent<MoveEnemy>().Spawn();
+            SoundManager.Instance.PlaySFX("boss");
+
         }
 
     }
@@ -415,26 +491,42 @@ public class GameManager : Singleton<GameManager>{
     private void levelEffect(int i)
     {
 
-        if (LevelManager.Instance.firescene)
-        {
-            Debug.Log("+enemyHP");
-            GameObject o = enemyList[i];
-            Transform temp = o.transform.FindChild("HealthBar");
-            HealthBar health_bar = temp.gameObject.GetComponent<HealthBar>();
-            health_bar.maxHealth += health_bar.maxHealth * 0.5f;
-            health_bar.currentHealth += health_bar.currentHealth * 0.5f;
-          
-        }
+            if (LevelManager.Instance.firescene)
+            {
+                Debug.Log("+enemyHP");
+                GameObject o = enemyList[i];
+                Transform temp = o.transform.FindChild("HealthBar");
+                HealthBar health_bar = temp.gameObject.GetComponent<HealthBar>();
+                health_bar.maxHealth += health_bar.maxHealth * 0.5f;
+                health_bar.currentHealth += health_bar.currentHealth * 0.5f;
 
-        else if (LevelManager.Instance.windscene)
-        {
-            Debug.Log("+enemySpeed");
-            Debug.Log(i);
-            GameObject o = enemyList[i];
-            MoveEnemy enemies = o.GetComponent<MoveEnemy>();
-            enemies.Speed += enemies.Speed * 0.3f;
-        }
+            }
 
+            else if (LevelManager.Instance.windscene)
+            {
+                Debug.Log("+enemySpeed");
+                Debug.Log(i);
+                GameObject o = enemyList[i];
+                MoveEnemy enemies = o.GetComponent<MoveEnemy>();
+                enemies.Speed += enemies.Speed * 0.3f;
+            }
+
+    }
+
+    public void PauseGame()
+    {
+        paused = !paused;
+
+        if(paused)
+        {
+            Time.timeScale = 0;
+            pausedImage.gameObject.SetActive(true);
+        }
+        else
+        {
+            Time.timeScale = 1;
+            pausedImage.gameObject.SetActive(false);
+        }
     }
 }
 

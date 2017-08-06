@@ -37,6 +37,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &180148
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 496276}
+  - 212: {fileID: 21295874}
+  m_Layer: 2
+  m_Name: Levels
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!4 &454890
 Transform:
   m_ObjectHideFlags: 1
@@ -45,7 +61,7 @@ Transform:
   m_GameObject: {fileID: 126342}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.694, y: -0.645, z: 0}
-  m_LocalScale: {x: 4.7, y: 4.7, z: 1}
+  m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children: []
   m_Father: {fileID: 492982}
   m_RootOrder: 0
@@ -60,8 +76,21 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454890}
+  - {fileID: 496276}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &496276
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180148}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.69, y: -0.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 492982}
+  m_RootOrder: 1
 --- !u!58 &5838064
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -89,7 +118,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0.68266654, y: -0.5802667}
   serializedVersion: 2
-  m_Radius: 2.3
+  m_Radius: 2.5
 --- !u!114 &11417974
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -104,10 +133,11 @@ MonoBehaviour:
   enemiesInRange: []
   bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
   debuffDuration: 5
-  proc: 60
-  damage: 10
+  proc: 70
+  damage: 3
   speed: 6
-  attackCooldown: 1
+  attackCooldown: 0.6
+  levelText: {fileID: 0}
   slowingFactor: 50
 --- !u!114 &11444784
 MonoBehaviour:
@@ -137,10 +167,11 @@ MonoBehaviour:
   enemiesInRange: []
   bullet: {fileID: 176688, guid: f82e76076c55bbf4999991b904d5871d, type: 2}
   debuffDuration: 5
-  proc: 60
-  damage: 10
+  proc: 70
+  damage: 3
   speed: 6
-  attackCooldown: 1
+  attackCooldown: 0.6
+  levelText: {fileID: 180148}
   slowingFactor: 50
 --- !u!212 &21223322
 SpriteRenderer:
@@ -199,6 +230,36 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 0fc5e1244861e6448b7b4baac0f7e531, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+--- !u!212 &21295874
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 180148}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000e000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_UseLightProbes: 0
+  m_ReflectionProbeUsage: 0
+  m_ProbeAnchor: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 5
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

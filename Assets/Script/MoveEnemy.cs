@@ -16,6 +16,18 @@ public class MoveEnemy : MonoBehaviour {
     [SerializeField]
     private float minimalDist;
 
+    [SerializeField]
+    private GameObject fire;
+
+    [SerializeField]
+    private GameObject frost;
+
+    [SerializeField]
+    private GameObject poison;
+
+    [SerializeField]
+    private GameObject stun;
+
     public float Speed
     {
         get { return speed; }
@@ -37,6 +49,12 @@ public class MoveEnemy : MonoBehaviour {
 	void Start () {
         lastWaypointSwitchTime = Time.time;
         //MaxSpeed = speed;
+        fire.SetActive(false);
+        frost.SetActive(false);
+        poison.SetActive(false);
+        stun.SetActive(false);
+        RotateIntoMoveDirection();
+        
 	}
 	
 	// Update is called once per frame
@@ -49,6 +67,7 @@ public class MoveEnemy : MonoBehaviour {
 
     public void Spawn()
     {
+        debuffs.Clear();
         Vector3 startPosition = waypoints[0].transform.position;
         transform.position = startPosition;
     }
@@ -74,6 +93,7 @@ public class MoveEnemy : MonoBehaviour {
 
         //gameObject.transform.position = Vector3.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
 
+        if(!GameManager.Instance.Paused)
         gameObject.transform.position = gameObject.transform.position + direction * (speed/60);
 
         //Debug.Log(gameObject.transform.position);
@@ -91,6 +111,7 @@ public class MoveEnemy : MonoBehaviour {
                 currentWaypoint++;
                 lastWaypointSwitchTime = Time.time;
                 // TODO: Rotate into move direction
+               
                 RotateIntoMoveDirection();
             }
             else
@@ -103,7 +124,10 @@ public class MoveEnemy : MonoBehaviour {
                 //AudioSource audioSource = gameObject.GetComponent<AudioSource>();
                 //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
                 // TODO: deduct health
-                GameManager.Instance.Health -= 1;
+                if (GameObject.Find("Boss1(Clone)"))
+                    GameManager.Instance.Health -= 5;
+                else
+                    GameManager.Instance.Health -= 1;
             }
         }
     }
@@ -118,11 +142,12 @@ public class MoveEnemy : MonoBehaviour {
         float x = newDirection.x;
         float y = newDirection.y;
         float rotationAngle = Mathf.Atan2(y, x) * 180 / Mathf.PI;
-        //3
-        GameObject sprite = (GameObject)
+        //3  
+            GameObject sprite = (GameObject)
             gameObject.transform.FindChild("Sprite").gameObject;
-        sprite.transform.rotation =
-            Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+            sprite.transform.rotation =
+                Quaternion.AngleAxis(rotationAngle, Vector3.forward);
+
     }
 
     public float distanceToGoal()
@@ -145,13 +170,14 @@ public class MoveEnemy : MonoBehaviour {
         if (!debuffs.Exists(x => x.GetType() == debuff.GetType()))
         {
             newDebuffs.Add(debuff);
+            ShowEffects(debuff);
         }
-        
     }
 
     public void RemoveDebuff(Debuff debuff)
     {
         debuffsToRemove.Add(debuff);
+        HideEffects(debuff);
     }
 
     private void HandleDebuffs()
@@ -184,13 +210,58 @@ public class MoveEnemy : MonoBehaviour {
 
         if (healthBar.currentHealth <= 0)
         {
+            int random_ = Random.Range(28, 35);
             Destroy(gameObject);
             //GameManager.Instance.enemyList.Remove(gameObject);
             //AudioSource audioSource = target.GetComponent<AudioSource>();
             //AudioSource.PlayClipAtPoint(audioSource.clip, transform.position);
-            GameManager.Instance.Currency += 50;
+            GameManager.Instance.Currency += random_;
             SoundManager.Instance.PlaySFX("coins");
             //SoundManager.Instance.PlaySFX("kill sound");
+        }
+    }
+
+    public void ShowEffects(Debuff debuff)
+    {
+        Debuff tempDebuff = debuff;
+
+        if(tempDebuff.ToString() == "FireDebuff" )
+        {
+            fire.SetActive(true);
+        }
+        else if(tempDebuff.ToString() == "FrostDebuff")
+        {
+            frost.SetActive(true);
+        }
+        else if(tempDebuff.ToString() == "PoisonDebuff")
+        {
+            poison.SetActive(true);
+        }
+        else if(tempDebuff.ToString() == "LightningDebuff")
+        {
+            stun.SetActive(true);
+        }
+    }
+
+    public void HideEffects(Debuff debuff)
+    {
+        Debuff tempDebuff = debuff;
+
+        if (tempDebuff.ToString() == "FireDebuff")
+        {
+            fire.SetActive(false);
+        }
+        else if (tempDebuff.ToString() == "FrostDebuff")
+        {
+            frost.SetActive(false);
+        }
+        else if (tempDebuff.ToString() == "PoisonDebuff")
+        {
+            poison.SetActive(false);
+        }
+        else if (tempDebuff.ToString() == "LightningDebuff")
+        {
+            stun.SetActive(false);
         }
     }
 }

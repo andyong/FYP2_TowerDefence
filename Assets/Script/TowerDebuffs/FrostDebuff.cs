@@ -9,7 +9,6 @@ public class FrostDebuff : Debuff
     public FrostDebuff(float slowingFactor, float duration, MoveEnemy target)
         : base(target, duration)
     {
-        Debug.Log("FrostDebuff");
         this.slowingFactor = slowingFactor;
     }
 
@@ -24,7 +23,10 @@ public class FrostDebuff : Debuff
                 if (target.Speed > 0)
                     target.Speed -= (target.MaxSpeed * slowingFactor) / 100;
                 else
+                {
                     target.Speed = 0;
+                }
+                    
             }
         }
         base.Update();

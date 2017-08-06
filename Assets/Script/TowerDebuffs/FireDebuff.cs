@@ -25,7 +25,7 @@ public class FireDebuff : Debuff
             timeSinceTick += Time.deltaTime;
 
             if(timeSinceTick >= tickTime)
-            {
+            {   
                 timeSinceTick = 0;
                 target.TakeDamage(tickDamage);
             }

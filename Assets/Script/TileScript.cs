@@ -121,7 +121,7 @@ public class TileScript : MonoBehaviour {
             myTower.Damage -= myTower.Damage / 2;
         }
 
-        else if(LevelManager.Instance.waterscene)
+        else if (LevelManager.Instance.waterscene)
         {
             Debug.Log("+attackCooldown");
             myTower.AttackCooldown += myTower.AttackCooldown * 0.3f;

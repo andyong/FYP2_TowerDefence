@@ -74,6 +74,9 @@ public abstract class Tower : MonoBehaviour {
         set {this.attackCooldown = value ;}
     }
 
+    [SerializeField]
+    private GameObject levelText;
+
     public Element ElementType { get; protected set; }
 
     public TowerUpgrade[] Upgrades { get; protected set; }
@@ -108,7 +111,7 @@ public abstract class Tower : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         //Debug.Log(target);
-
+        ShowLevel();
         Attack();
 	}
 
@@ -118,10 +121,26 @@ public abstract class Tower : MonoBehaviour {
        GameManager.Instance.UpdateUpgradeTip();
     }
 
+    public void ShowLevel()
+    {
+        if(Level ==1 )
+        {
+            levelText.GetComponent<SpriteRenderer>().sprite = Resources.Load("tower_level_1", typeof(Sprite)) as Sprite;
+        }
+        else if (Level == 2)
+        {
+            levelText.GetComponent<SpriteRenderer>().sprite = Resources.Load("tower_level_2", typeof(Sprite)) as Sprite;
+        }
+        else if (Level == 3)
+        {
+            levelText.GetComponent<SpriteRenderer>().sprite = Resources.Load("tower_level_3", typeof(Sprite)) as Sprite;
+        }
+    }
+
 
     private void Attack()
     {
-        target = null;
+       target = null;
 
         // 1
         float minimalEnemyDistance = float.MaxValue;
@@ -216,6 +235,7 @@ public abstract class Tower : MonoBehaviour {
         newBullet.transform.position = startPosition;
         BulletBehaviour bulletComp = newBullet.GetComponent<BulletBehaviour>();
         bulletComp.target = target.gameObject.GetComponent<MoveEnemy>();
+
         bulletComp.startPosition = startPosition;
         bulletComp.targetPosition = targetPosition;
 

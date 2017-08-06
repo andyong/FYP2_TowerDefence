@@ -46,14 +46,16 @@ public class BulletBehaviour : MonoBehaviour
             Destroy(gameObject);
 
         }
+        
     }
 
     private void ApplyDebuff()
     {
         float roll = Random.Range(0, 100);
-        //if(roll > parent.Proc)
+        if (roll <= parent.Proc)
         {
             target.AddDebuff(parent.GetDebuff());
+           
         }
    
     }

@@ -27,3 +27,11 @@ EditorBuildSettings:
     path: Assets/Scene/level.unity
   - enabled: 1
     path: Assets/Scene/towerhelp.unity
+  - enabled: 1
+    path: Assets/Scene/fireLoadscene.unity
+  - enabled: 1
+    path: Assets/Scene/darkLoadscene.unity
+  - enabled: 1
+    path: Assets/Scene/waterLoadscene.unity
+  - enabled: 1
+    path: Assets/Scene/windLoadscene.unity

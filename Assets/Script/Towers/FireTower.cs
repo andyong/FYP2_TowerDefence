@@ -28,14 +28,13 @@ public class FireTower : Tower
         Upgrades = new TowerUpgrade[]
         {
             new TowerUpgrade(75, 10, .5f, 10, -0.1f, 1),
-            new TowerUpgrade(125, 20, .5f, 15, -0.1f, 1),
+            new TowerUpgrade(125, 15, .5f, 15, -0.1f, 1),
         };
     }
 
 
     public override Debuff GetDebuff()
     {
-
         return new FireDebuff(TickDamage, TickTime, DebuffDuration, Target);
         //return null;
     }

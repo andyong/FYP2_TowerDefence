@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class CameraMovement : MonoBehaviour {
 
@@ -10,6 +11,8 @@ public class CameraMovement : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+
+      
 
 	}
 	
